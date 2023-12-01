@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/cheta/IdeaProjects/ShoppersStack/src/test/java/com/shooperstacks/qa/test/MyOrderPageTest.java">
+        <classes>
+            <class name="com.shooperstacks.qa.test.MyOrderPageTest">
+                <methods>
+                    <include name="loginAsShopper"/>
+                    <include name="addItemToCart"/>
+                    <include name="buyTheItemFromViewCart"/>
+                    <include name="addAddressInAddAddressPage"/>
+                    <include name="selectDeliveryAddress"/>
+                    <include name="selectPaymentOption"/>
+                    <include name="cancelTheOrderProduct"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
