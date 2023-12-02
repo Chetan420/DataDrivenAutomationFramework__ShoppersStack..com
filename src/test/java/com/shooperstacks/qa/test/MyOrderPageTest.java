@@ -162,11 +162,12 @@ public class MyOrderPageTest extends TestBase {
         homePage.accountSettingIcon();
         Reporter.log("Click on MyOrders button.my order page will de displayed.");
         myOrdersPage=homePage.myOrders();
-        Reporter.log("Generate the invoice report of login page");
-        myOrdersPage.invoiceButton();
-        Reporter.log("Click on cancel button and cancel the ordered item");
+        Reporter.log("Cancel the order",true)
         myOrdersPage.cancelOrderButton();
         myOrdersPage.yesButton();
+         Reporter.log("Generate the invoice report of login page");
+        myOrdersPage.invoiceButton();
+        Reporter.log("Click on cancel button and cancel the ordered item");
         myOrdersPage.homeButton();
     }
 
