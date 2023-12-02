@@ -1,6 +1,7 @@
 package com.shoppersstacks.qa.pages;
 
 import com.shoppersstacks.qa.base.TestBase;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -12,7 +13,7 @@ public class MyOrdersPage extends TestBase {
     WebElement invoiceButton;
     @FindBy(xpath = "//button[text()='Cancel Order']")
     WebElement cancelOrder;
-    @FindBy(xpath = "(//button[text()='Yes'])[3]")
+    @FindBy(xpath = "(//button[text()='Yes'])[1]")
     WebElement yes;
     @FindBy(xpath = "//button[(text()='Cancel')]")
     WebElement no;
@@ -34,7 +35,15 @@ public class MyOrdersPage extends TestBase {
         cancelOrder.click();
     }
     public void yesButton(){
-        yes.click();
+        for(;;){
+            try{
+                yes.click();
+                break;
+            }
+            catch (WebDriverException e){
+
+            }
+        }
     }
     public void cancel(){
         no.click();
