@@ -12,7 +12,7 @@ public class MyOrdersPage extends TestBase {
     WebElement invoiceButton;
     @FindBy(xpath = "//button[text()='Cancel Order']")
     WebElement cancelOrder;
-    @FindBy(xpath = "(//button[text()='Yes'])[3]")
+    @FindBy(xpath = "(//button[text()='Yes'])[1]")
     WebElement yes;
     @FindBy(xpath = "//button[(text()='Cancel')]")
     WebElement no;
