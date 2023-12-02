@@ -1,18 +1,19 @@
 package com.shooperstacks.qa.test;
 
-import com.github.dockerjava.api.model.ContainerPort;
 import com.shoppersstacks.qa.base.TestBase;
 import com.shoppersstacks.qa.pages.*;
-import jdk.jshell.spi.SPIResolutionException;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
-import org.testng.Assert;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.awt.*;
-import java.io.IOException;
+import java.time.Duration;
 
 public class MyOrderPageTest extends TestBase {
     LoginPage loginPage;
