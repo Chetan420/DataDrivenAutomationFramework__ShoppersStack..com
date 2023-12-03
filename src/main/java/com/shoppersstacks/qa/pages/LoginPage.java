@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class LoginPage extends TestBase {
 
     //Page Factory or Object Repository
+    @FindBy(xpath = "//div[text()='Successfully Registered']")
+    WebElement registrationMsg;
     @FindBy(xpath = "//button[@type='button' and @id='vertical-tab-0']")
     WebElement shopperLogin;
     @FindBy(xpath = "//button[@type='button' and @id='vertical-tab-1']")
@@ -36,12 +38,17 @@ public class LoginPage extends TestBase {
     WebElement createAccount;
     @FindBy(id="email-helper-text")
     WebElement forgetEmailError;
+    @FindBy(xpath = "//div[contains(text(),'Given user ID')]")
+    WebElement error;
 
     String ButtonColor="background";
 
     //Initializing the Page Objects
     public LoginPage(){
         PageFactory.initElements(driver,this);
+    }
+    public String msg(){
+        return registrationMsg.getText();
     }
 
     public String  loginButton() throws InterruptedException {
@@ -86,6 +93,9 @@ public class LoginPage extends TestBase {
     public String createButton()
     {
         return createAccount.getCssValue(ButtonColor);
+    }
+    public String errorMessage(){
+        return error.getText();
     }
     public HomePage login(){
         loginClickButton.click();
