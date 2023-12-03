@@ -58,7 +58,7 @@ public class WebEventListner extends TestBase implements WebDriverEventListener 
 
     @Override
     public void afterNavigateForward(WebDriver driver) {
-        System.out.println("Navaigated forward to next page ");
+        System.out.println("Navigated forward to next page ");
     }
 
 
