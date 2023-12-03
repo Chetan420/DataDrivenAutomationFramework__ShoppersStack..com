@@ -122,7 +122,7 @@ public class MyOrderPageTest extends TestBase {
         addAddressPage.cityDropDown(city);
         addAddressPage.pincode(pincode);
         addAddressPage.phoneNumber(phoneNumber);
-        Reporter.log("Click on Add Address button.Again select delivery address page should be displayed",true);
+        Reporter.log("Click on Add Address button to save the address.",true);
         selectDeliveryAddressPage=addAddressPage.addAddress();
     }
 
