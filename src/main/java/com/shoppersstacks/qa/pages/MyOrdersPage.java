@@ -37,7 +37,7 @@ public class MyOrdersPage extends TestBase {
     public void yesButton(){
         for(;;){
             try{
-                yes.click();
+                js.executeScript("arguments[0].click()",yes);
                 break;
             }
             catch (WebDriverException e){
