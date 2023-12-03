@@ -2,6 +2,7 @@ package com.shoppersstacks.qa.pages;
 
 import com.shoppersstacks.qa.base.TestBase;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -25,7 +26,7 @@ public class HomePage extends TestBase{
     WebElement viewCart;
     @FindBy (xpath = "//div[text()='C']")
     WebElement accountSettingIcon;
-    @FindBy(xpath = "//img[@alt='APPLE iPhone 14 Pro']")
+    @FindBy(xpath = "//span[text()='APPLE iPhone 14 Pro']")
     WebElement item;
     @FindBy(id = "Add To Cart")
     WebElement add;
@@ -98,14 +99,27 @@ public class HomePage extends TestBase{
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(2000);
         robot.mouseMove(500,708);
-        robot.delay(2000);
     }
     public void item(){
-        wait.until(ExpectedConditions.elementToBeClickable(item)).click();
+       for(;;){
+           try {
+               js.executeScript("arguments[0].click()",item);
+               break;
+           }
+           catch (WebDriverException e){
+
+           }
+       }
     }
-    public void addToCart()
-    {
-        wait.until(ExpectedConditions.elementToBeClickable(add)).click();
+    public void addToCart() throws InterruptedException {
+        for(;;){
+            try{
+                js.executeScript("arguments[0].click()",add);
+            }
+            catch (WebDriverException e){
+
+            }
+        }
     }
     public String added(){
         return addedButton.getText();
