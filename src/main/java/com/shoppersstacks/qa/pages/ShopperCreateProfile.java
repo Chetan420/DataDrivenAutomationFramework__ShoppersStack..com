@@ -54,6 +54,7 @@ public class ShopperCreateProfile extends TestBase {
     WebElement conPassError;
     @FindBy(id="Register")
     WebElement register;
+
     public ShopperCreateProfile(){
         PageFactory.initElements(driver,this);
     }
