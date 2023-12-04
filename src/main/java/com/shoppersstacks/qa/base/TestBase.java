@@ -1,5 +1,6 @@
 package com.shoppersstacks.qa.base;
 
+import com.beust.jcommander.Parameter;
 import com.shoppersstacks.qa.util.TestUtil;
 import com.shoppersstacks.qa.util.WebEventListner;
 import org.openqa.selenium.JavascriptExecutor;
@@ -45,6 +46,7 @@ public class TestBase {
             throw new RuntimeException(e);
         }
     }
+
 
     public static void initialization() throws AWTException {
         String browserName=prop.getProperty("browser");

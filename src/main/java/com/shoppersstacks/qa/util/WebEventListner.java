@@ -103,8 +103,8 @@ public class WebEventListner extends TestBase implements WebDriverEventListener 
     }
 
     @Override
-    public void onException(Throwable throwable, WebDriver driver) {
-        System.out.println("Exception occured: ");
+    public void onException(Throwable exception, WebDriver driver) {
+        System.out.println("Exception occured: " +exception);
         try {
             TestUtil.takeScreenShot();
         } catch (IOException e) {
@@ -119,7 +119,7 @@ public class WebEventListner extends TestBase implements WebDriverEventListener 
 
     @Override
     public <X> void afterGetScreenshotAs(OutputType<X> target, X screenshot) {
-        System.out.println("Screen shot has been takened and Saved");
+        System.out.println("Screen shot has been taken and Saved");
     }
 
     @Override

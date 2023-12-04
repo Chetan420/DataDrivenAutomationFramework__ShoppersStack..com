@@ -13,6 +13,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class TestUtil extends TestBase {
     public static long PAGE_LOAD_TIMEOUT = 10;
@@ -69,9 +71,9 @@ public class TestUtil extends TestBase {
     }
 
     public static void takeScreenShot() throws IOException {
+        String dateName=new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         TakesScreenshot ts=(TakesScreenshot) driver;
         File temp = ts.getScreenshotAs(OutputType.FILE);
-        File src=new File("./errorShots/ShoppersStack.jpg");
-        FileHandler.copy(temp,src);
+        FileHandler.copy(temp,new File("./errorShots/ShoppersStack"+dateName+".jpg"));
     }
 }
