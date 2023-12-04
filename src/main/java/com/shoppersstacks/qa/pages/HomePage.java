@@ -49,6 +49,7 @@ public class HomePage extends TestBase{
         PageFactory.initElements(driver,this);
     }
     public String homePageTitle(){
+        robot.delay(1500);
        return driver.getTitle();
     }
     public void homeButton(){

@@ -66,9 +66,9 @@ public class LoginPageTest extends TestBase {
         homePage=loginPage.login();
 
         String expected="ShoppersStack | Home";
-        String actual=driver.getTitle();
-        if(exp.equals("valid"))
+        if(exp.equals("Valid"))
         {
+            String actual=homePage.homePageTitle();
             if(expected.equals(actual)) {
                 homePage.accountSettingIcon();
                 homePage.logout();
@@ -81,6 +81,7 @@ public class LoginPageTest extends TestBase {
             }
         }
         else if(exp.equals("invalid")){
+            String actual=driver.getTitle();
             if(expected.equals(actual)){
                 homePage.accountSettingIcon();
                 homePage.logout();

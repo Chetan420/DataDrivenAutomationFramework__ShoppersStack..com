@@ -25,255 +25,85 @@ td,th {border:1px solid #009;padding:.25em .5em}
 <body>
 <table cellspacing="0" cellpadding="0" class="testOverview">
 <tr><th>Test</th><th>Methods<br/>Passed</th><th>Scenarios<br/>Passed</th><th># skipped</th><th># failed</th><th>Total<br/>Time</th><th>Included<br/>Groups</th><th>Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em"><a href="#t1">ShoppersStack</a></td><td class="numi">0</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">5</td><td class="numi">120.0 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em"><a href="#t1">ShoppersStack</a></td><td class="numi">7</td><td class="numi">7</td><td class="numi">0</td><td class="numi">0</td><td class="numi">105.6 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="methodOverview" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
-<tr id="t1"><th colspan="5">ShoppersStack &#8212; failed</th></tr>
-<tr class="failedodd"><td rowspan="5">com.shooperstacks.qa.test.LoginPageTest</td><td><a href="#m1"><b>loginTest</b>  </a></td><td class="numi">2</td><td>1701689370701</td><td class="numi">33140</td></tr><tr class="failedodd"><td><a href="#m2"><b>verifyHideIcon</b>  </a></td><td class="numi">1</td><td>1701689348264</td><td class="numi">14504</td></tr><tr class="failedodd"><td><a href="#m3"><b>loginTest</b>  </a></td><td class="numi">2</td><td>1701689370701</td><td class="numi">33140</td></tr><tr class="failedodd"><td><a href="#m4"><b>verifyTheLoginPageTitle</b>  </a></td><td class="numi">1</td><td>1701689324301</td><td class="numi">14463</td></tr><tr class="failedodd"><td><a href="#m5"><b>errorMessageValidation</b>  </a></td><td class="numi">1</td><td>1701689410552</td><td class="numi">20613</td></tr>
+<tr id="t1"><th colspan="5">ShoppersStack &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="7">com.shooperstacks.qa.test.LoginPageTest</td><td><a href="#m1"><b>loginTest</b>  </a></td><td class="numi">4</td><td>1701715140241</td><td class="numi">54170</td></tr><tr class="passedodd"><td><a href="#m2"><b>verifyTheLoginPageTitle</b>  </a></td><td class="numi">1</td><td>1701715110875</td><td class="numi">8077</td></tr><tr class="passedodd"><td><a href="#m3"><b>loginTest</b>  </a></td><td class="numi">4</td><td>1701715140241</td><td class="numi">54170</td></tr><tr class="passedodd"><td><a href="#m4"><b>verifyHideIcon</b>  </a></td><td class="numi">1</td><td>1701715124355</td><td class="numi">9489</td></tr><tr class="passedodd"><td><a href="#m5"><b>loginTest</b>  </a></td><td class="numi">4</td><td>1701715140241</td><td class="numi">54170</td></tr><tr class="passedodd"><td><a href="#m6"><b>loginTest</b>  </a></td><td class="numi">4</td><td>1701715140241</td><td class="numi">54170</td></tr><tr class="passedodd"><td><a href="#m7"><b>errorMessageValidation</b>  </a></td><td class="numi">1</td><td>1701715199408</td><td class="numi">9539</td></tr>
 </table>
 <h1>ShoppersStack</h1>
 <h2 id="m1">com.shooperstacks.qa.test.LoginPageTest:loginTest</h2>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
-<tr class="param stripe"><td>dinga420@gmail.com</td>
-<td>Dinga@420</td>
-<td>invalid</td>
+<tr class="param stripe"><td>chethan123@gmail.com</td>
+<td>Chethan@123</td>
+<td>Valid</td>
 </tr>
 <tr><td colspan="3">
-<h3>Test Messages</h3>
 Click on login button<br/>
-<h3>Failure</h3>
-<div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (2b6013d2a6294da5673161ff082e5910)] -&gt; id: loginBtn] (tried for 10 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.shoppersstacks.qa.pages.LoginPage.loginButton(LoginPage.java:55)
-	at com.shooperstacks.qa.test.LoginPageTest.loginTest(LoginPageTest.java:60)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#loginBtn&quot;}
-  (Session info: chrome=119.0.6045.200)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2b6013d2a6294da5673161ff082e5910, findElement {using=id, value=loginBtn}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.200, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\cheta\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55797}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55797/devtoo..., se:cdpVersion: 119.0.6045.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 2b6013d2a6294da5673161ff082e5910
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:107)
-	at jdk.proxy2/jdk.proxy2.$Proxy10.findElement(Unknown Source)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:194)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy14.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-	... 27 more
-... Removed 27 stack frames</div>
+Enter a email<br/>
+Enter a password<br/>
+Click on login button<br/>
+Login Success<br/>
 </td></tr>
 </table>
 <p class="totop"><a href="#summary">back to summary</a></p>
 <h2 id="m2">com.shooperstacks.qa.test.LoginPageTest:loginTest</h2>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
-<tr class="param stripe"><td>dingi840@gamil.com</td>
-<td>Dingi@840</td>
+<tr class="param stripe"><td>Chethan123@gmail.com</td>
+<td>chethan@123</td>
 <td>invalid</td>
 </tr>
 <tr><td colspan="3">
-<h3>Test Messages</h3>
 Click on login button<br/>
-<h3>Failure</h3>
-<div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (fad1211d869d7a24e37ab515be7e5b4c)] -&gt; id: loginBtn] (tried for 10 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.shoppersstacks.qa.pages.LoginPage.loginButton(LoginPage.java:55)
-	at com.shooperstacks.qa.test.LoginPageTest.loginTest(LoginPageTest.java:60)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#loginBtn&quot;}
-  (Session info: chrome=119.0.6045.200)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [fad1211d869d7a24e37ab515be7e5b4c, findElement {using=id, value=loginBtn}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.200, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\cheta\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55827}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55827/devtoo..., se:cdpVersion: 119.0.6045.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: fad1211d869d7a24e37ab515be7e5b4c
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:107)
-	at jdk.proxy2/jdk.proxy2.$Proxy10.findElement(Unknown Source)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:194)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy14.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-	... 27 more
-... Removed 27 stack frames</div>
+Enter a email<br/>
+Enter a password<br/>
+Click on login button<br/>
+Given user ID or password is wrong<br/>
 </td></tr>
 </table>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m3">com.shooperstacks.qa.test.LoginPageTest:verifyHideIcon</h2>
+<h2 id="m3">com.shooperstacks.qa.test.LoginPageTest:loginTest</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>chethan123@gmail.com</td>
+<td>Chethan@12</td>
+<td>invalid</td>
+</tr>
+<tr><td colspan="3">
+Click on login button<br/>
+Enter a email<br/>
+Enter a password<br/>
+Click on login button<br/>
+Given user ID or password is wrong<br/>
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m4">com.shooperstacks.qa.test.LoginPageTest:errorMessageValidation</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m5">com.shooperstacks.qa.test.LoginPageTest:verifyTheLoginPageTitle</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m6">com.shooperstacks.qa.test.LoginPageTest:loginTest</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>Chethan123@gmail.com</td>
+<td>Chethan@123</td>
+<td>invalid</td>
+</tr>
+<tr><td colspan="3">
+Click on login button<br/>
+Enter a email<br/>
+Enter a password<br/>
+Click on login button<br/>
+Given user ID or password is wrong<br/>
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m7">com.shooperstacks.qa.test.LoginPageTest:verifyHideIcon</h2>
 <div>
-<h3>Test Messages</h3>
 Verifying whether the HideIcon is working or not.<br/>
-<h3>Failure</h3>
-<div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (566a7bd19d3ea6aa6b47178c5b1a6908)] -&gt; id: loginBtn] (tried for 10 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.shoppersstacks.qa.pages.LoginPage.loginButton(LoginPage.java:55)
-	at com.shooperstacks.qa.test.LoginPageTest.verifyHideIcon(LoginPageTest.java:44)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#loginBtn&quot;}
-  (Session info: chrome=119.0.6045.200)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [566a7bd19d3ea6aa6b47178c5b1a6908, findElement {using=id, value=loginBtn}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.200, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\cheta\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55757}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55757/devtoo..., se:cdpVersion: 119.0.6045.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 566a7bd19d3ea6aa6b47178c5b1a6908
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:107)
-	at jdk.proxy2/jdk.proxy2.$Proxy10.findElement(Unknown Source)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:194)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy14.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-	... 27 more
-... Removed 27 stack frames</div>
-</div>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m4">com.shooperstacks.qa.test.LoginPageTest:verifyTheLoginPageTitle</h2>
-<div>
-<div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (b91573258bfd4498c1cb59ab3ff059c5)] -&gt; id: loginBtn] (tried for 10 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.shoppersstacks.qa.pages.LoginPage.loginButton(LoginPage.java:55)
-	at com.shooperstacks.qa.test.LoginPageTest.verifyTheLoginPageTitle(LoginPageTest.java:35)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#loginBtn&quot;}
-  (Session info: chrome=119.0.6045.200)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b91573258bfd4498c1cb59ab3ff059c5, findElement {using=id, value=loginBtn}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.200, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\cheta\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55721}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55721/devtoo..., se:cdpVersion: 119.0.6045.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b91573258bfd4498c1cb59ab3ff059c5
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:107)
-	at jdk.proxy2/jdk.proxy2.$Proxy10.findElement(Unknown Source)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:194)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy14.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-	... 27 more
-... Removed 27 stack frames</div>
-</div>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m5">com.shooperstacks.qa.test.LoginPageTest:errorMessageValidation</h2>
-<div>
-<div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.id: loginBtn&apos; (tried for 10 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.shoppersstacks.qa.pages.LoginPage.loginButton(LoginPage.java:55)
-	at com.shooperstacks.qa.test.LoginPageTest.errorMessageValidation(LoginPageTest.java:98)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#loginBtn&quot;}
-  (Session info: chrome=119.0.6045.200)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3c0cd3dd266ce952cdaac88af1eae6c4, findElement {using=id, value=loginBtn}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.200, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\cheta\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55862}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55862/devtoo..., se:cdpVersion: 119.0.6045.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3c0cd3dd266ce952cdaac88af1eae6c4
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:107)
-	at jdk.proxy2/jdk.proxy2.$Proxy10.findElement(Unknown Source)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:194)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy14.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-	... 27 more
-... Removed 27 stack frames</div>
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>
