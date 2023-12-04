@@ -95,6 +95,7 @@ public class LoginPage extends TestBase {
         return createAccount.getCssValue(ButtonColor);
     }
     public String errorMessage(){
+        robot.delay(2000);
         return error.getText();
     }
     public HomePage login(){

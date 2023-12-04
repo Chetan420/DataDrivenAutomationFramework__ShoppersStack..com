@@ -36,6 +36,22 @@ public class TestUtil extends TestBase {
     public TestUtil(String path){
         this.path=path;
     }
+
+    public int getRowCount(String sheetName) throws IOException, InvalidFormatException {
+        file=new FileInputStream(path);
+        workbook=WorkbookFactory.create(file);
+        sheet=workbook.getSheet(sheetName);
+        int rowCount=sheet.getLastRowNum();
+        return rowCount;
+    }
+
+    public int getCellCount(String sheetName,int rowNum) throws IOException, InvalidFormatException {
+        file =new FileInputStream(path);
+        workbook=WorkbookFactory.create(file);
+        sheet=workbook.getSheet(sheetName);
+        int cellCount=sheet.getRow(rowNum).getLastCellNum();
+        return cellCount;
+    }
     public Object[][] getCellDatas(String sheetName) throws IOException, InvalidFormatException {
         file = new FileInputStream(path);
         workbook = WorkbookFactory.create(file);
