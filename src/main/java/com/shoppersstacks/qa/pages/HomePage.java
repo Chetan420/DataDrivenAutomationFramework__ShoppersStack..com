@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import javax.swing.text.View;
 import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 
 public class HomePage extends TestBase{
 
@@ -100,6 +101,21 @@ public class HomePage extends TestBase{
         robot.delay(2000);
         robot.mouseMove(500,708);
     }
+
+    public void mensStore(){
+        robot.mouseMove(520,99);
+    }
+    public void tShirt(){
+        robot.mouseMove(400,207);
+        robot.mousePress(KeyEvent.BUTTON1_DOWN_MASK);
+        robot.mouseRelease(KeyEvent.BUTTON1_DOWN_MASK);
+        robot.delay(2000);
+        robot.mouseMove(300,437);
+        robot.mousePress(KeyEvent.BUTTON1_DOWN_MASK);
+        robot.mouseRelease(KeyEvent.BUTTON1_DOWN_MASK);
+
+    }
+
     public void item(){
        for(;;){
            try {

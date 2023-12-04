@@ -71,7 +71,7 @@ public class TestUtil extends TestBase {
     public static void takeScreenShot() throws IOException {
         TakesScreenshot ts=(TakesScreenshot) driver;
         File temp = ts.getScreenshotAs(OutputType.FILE);
-        File src=new File("./com.shoppersstaks.qa.errorshots");
+        File src=new File("./errorShots/ShoppersStack.jpg");
         FileHandler.copy(temp,src);
     }
 }
