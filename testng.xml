@@ -2,17 +2,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true"
-          name="C:/Users/cheta/IdeaProjects/ShoppersStack/src/test/java/com/shooperstacks/qa/test/MyOrderPageTest.java">
+          name="C:/Users/cheta/IdeaProjects/ShoppersStack/src/test/java/com/shooperstacks/qa/test/LoginPageTest.java">
         <classes>
-            <class name="com.shooperstacks.qa.test.MyOrderPageTest">
+            <class name="com.shooperstacks.qa.test.LoginPageTest">
                 <methods>
-                    <include name="loginAsShopper"/>
-                    <include name="addItemToCart"/>
-                    <include name="buyTheItemFromViewCart"/>
-                    <include name="addAddressInAddAddressPage"/>
-                    <include name="selectDeliveryAddress"/>
-                    <include name="selectPaymentOption"/>
-                    <include name="cancelTheOrderProduct"/>
+                    <include name="verifyTheLoginPageTitle"/>
+                    <include name="verifyHideIcon"/>
+                    <include name="loginTest"/>
+                    <include name="errorMessageValidation"/>
                 </methods>
             </class>
         </classes>

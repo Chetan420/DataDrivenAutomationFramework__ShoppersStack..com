@@ -51,7 +51,7 @@ public class LoginPageTest extends TestBase {
 
     @DataProvider
     public Object[][] getData() throws IOException, InvalidFormatException {
-        Object datas[][]=util.getCellDatas("Sheet1");
+        Object[][] datas=util.getCellDatas("Sheet1");
         return datas;
     }
 
