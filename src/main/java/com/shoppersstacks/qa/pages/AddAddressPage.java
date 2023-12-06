@@ -9,39 +9,109 @@ import java.util.List;
 
 public class AddAddressPage extends TestBase {
     @FindBy(partialLinkText = "Add New Address")
-    WebElement addNewAddressButton;
+    private WebElement addNewAddressButton;
     @FindBy(id="Home")
-    WebElement homeRadioButton;
+    private WebElement homeRadioButton;
     @FindBy(id="Office")
-    WebElement officeRadioButton;
+    private WebElement officeRadioButton;
     @FindBy(id="Other")
-    WebElement otherRadioButton;
+    private WebElement otherRadioButton;
     @FindBy(name = "Name")
-    WebElement name;
+    private WebElement name;
     @FindBy(id="House/Office Info")
-    WebElement officeInfoTextField;
+    private WebElement officeInfoTextField;
     @FindBy(id="Street Info")
-    WebElement streetInfo;
+    private WebElement streetInfo;
     @FindBy(id="Landmark")
-    WebElement landmark;
+    private WebElement landmark;
     @FindBy(id="Pincode")
-    WebElement pincode;
+    private WebElement pincode;
     @FindBy (id="Country")
-    WebElement Country;
+    private WebElement Country;
     @FindBy(id="State")
-    WebElement State;
+    private WebElement State;
     @FindBy(id="City")
-    WebElement City;
+    private WebElement City;
     @FindBy(id="Phone Number")
-    WebElement phoneNumber;
+    private WebElement phoneNumber;
     @FindBy(id="addAddress")
-    WebElement addAddress;
+    private WebElement addAddress;
     @FindBy(xpath="//*[name()='svg' and @data-testid='InfoIcon']")
-    WebElement pincodeInfo;
+    private WebElement pincodeInfo;
     @FindBy(xpath = "//*[name()='svg' and @data-testid='CloseRoundedIcon']")
-    WebElement addressCancel;
+    private WebElement addressCancel;
+
+    public WebElement getAddNewAddressButton() {
+        return addNewAddressButton;
+    }
+
+    public WebElement getHomeRadioButton() {
+        return homeRadioButton;
+    }
+
+    public WebElement getOfficeRadioButton() {
+        return officeRadioButton;
+    }
+
+    public WebElement getOtherRadioButton() {
+        return otherRadioButton;
+    }
+
+    public WebElement getName() {
+        return name;
+    }
+
+    public WebElement getOfficeInfoTextField() {
+        return officeInfoTextField;
+    }
+
+    public WebElement getStreetInfo() {
+        return streetInfo;
+    }
+
+    public WebElement getLandmark() {
+        return landmark;
+    }
+
+    public WebElement getPincode() {
+        return pincode;
+    }
+
+    public WebElement getCountry() {
+        return Country;
+    }
+
+    public WebElement getState() {
+        return State;
+    }
+
+    public WebElement getCity() {
+        return City;
+    }
+
+    public WebElement getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public WebElement getAddAddress() {
+        return addAddress;
+    }
+
+    public WebElement getPincodeInfo() {
+        return pincodeInfo;
+    }
+
+    public WebElement getAddressCancel() {
+        return addressCancel;
+    }
+
+    public WebElement getAddAddressButton() {
+        return addAddressButton;
+    }
+
     @FindBy(id="addAddress")
-    WebElement addAddressButton;
+    private WebElement addAddressButton;
+
     public AddAddressPage(){
         PageFactory.initElements(driver,this);
     }
@@ -49,34 +119,34 @@ public class AddAddressPage extends TestBase {
         return driver.getTitle();
     }
     public void home() {
-        homeRadioButton.click();
+        getHomeRadioButton().click();
     }
     public void office() {
-        officeRadioButton.click();
+        getOfficeRadioButton().click();
     }
     public void other() {
-        otherRadioButton.click();
+        getOtherRadioButton().click();
     }
     public void name(String names){
-        name.sendKeys(names);
+        getName().sendKeys(names);
     }
     public void officeTextField(String office){
-        officeInfoTextField.sendKeys(office);
+        getOfficeInfoTextField().sendKeys(office);
     }
     public void streetTextFiled(String street){
-        streetInfo.sendKeys(street);
+        getStreetInfo().sendKeys(street);
     }
     public void landmark(String lndmark){
-        landmark.sendKeys(lndmark);
+        getLandmark().sendKeys(lndmark);
     }
     public void countryDropDown(String value){
-        dropDownHandling(Country,value);
+        dropDownHandling(getCountry(),value);
     }
     public void stateDropDown(String value){
-        dropDownHandling(State,value);
+        dropDownHandling(getState(),value);
     }
     public void cityDropDown(String value){
-        dropDownHandling(City,value);
+        dropDownHandling(getCity(),value);
     }
     public void dropDownHandling(WebElement element,String value){
         Select dropDown=new Select(element);
@@ -90,20 +160,20 @@ public class AddAddressPage extends TestBase {
 
     public void pincode(String pin)
     {
-        pincode.sendKeys(pin);
+        getPincode().sendKeys(pin);
     }
     public void pincodeInfo(){
-        pincodeInfo.click();
+        getPincodeInfo().click();
     }
     public void phoneNumber (String pno){
-        phoneNumber.sendKeys(pno);
+        getPhoneNumber().sendKeys(pno);
     }
     public SelectDeliveryAddressPage addAddress(){
-        addAddressButton.click();
+        getAddAddressButton().click();
         return new SelectDeliveryAddressPage();
     }
     public void addAddressCancel(){
-        addressCancel.click();
+        getAddressCancel().click();
     }
 
 }
