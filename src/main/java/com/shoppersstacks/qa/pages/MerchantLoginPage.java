@@ -8,34 +8,47 @@ import org.openqa.selenium.support.PageFactory;
 public class MerchantLoginPage extends TestBase {
 
     @FindBy (id = "Enter Admin Email")
-    WebElement enterAdminEmailTextField;
+    private WebElement enterAdminEmailTextField;
     @FindBy (xpath = "//button[@type='submit']")
-    WebElement iconButton;
+    private WebElement iconButton;
     @FindBy(linkText = "Merchant Signup")
-    WebElement merchantSignUp;
+    private WebElement merchantSignUp;
     @FindBy(id = "E-mail")
-    WebElement email;
+    private WebElement email;
+
+    public WebElement getEnterAdminEmailTextField() {
+        return enterAdminEmailTextField;
+    }
+
+    public WebElement getIconButton() {
+        return iconButton;
+    }
+
+    public WebElement getMerchantSignUp() {
+        return merchantSignUp;
+    }
+
+    public WebElement getEmail() {
+        return email;
+    }
+
     public MerchantLoginPage(){
         PageFactory.initElements(driver,this);
     }
     public void enterAdminEmailTextField(String Email)
     {
-        enterAdminEmailTextField.sendKeys(Email);
+        getEnterAdminEmailTextField().sendKeys(Email);
     }
     public void iconButton()
     {
-        iconButton.click();
+        getIconButton().click();
     }
     public void merchantSignUp()
     {
-        merchantSignUp.click();
+        getMerchantSignUp().click();
     }
-//    public void merchantLogin()
-//    {
-//        merchantLogin.click();
-//    }
     public void merchantEmail(String MerchantEmail)
     {
-        email.sendKeys(MerchantEmail);
+        getEmail().sendKeys(MerchantEmail);
     }
 }

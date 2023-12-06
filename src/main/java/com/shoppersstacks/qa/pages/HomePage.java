@@ -8,43 +8,102 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-
-import javax.swing.text.View;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
 public class HomePage extends TestBase{
 
     @FindBy(linkText = "Home")
-    WebElement homeButton;
+    private WebElement homeButton;
     @FindBy(id="search")
-    WebElement serchBar;
+    private WebElement serchBar;
     @FindBy(id="searchBtn")
-    WebElement searchButton;
+    private WebElement searchButton;
     @FindBy(css = "select[id='category' ]")
-    WebElement categoryDropDown;
+    private WebElement categoryDropDown;
     @FindBy(id="cartIcon")
-    WebElement viewCart;
+    private WebElement viewCart;
     @FindBy (xpath = "//div[text()='C']")
-    WebElement accountSettingIcon;
+    private WebElement accountSettingIcon;
     @FindBy(xpath = "//span[text()='APPLE iPhone 14 Pro']")
-    WebElement item;
+    private WebElement item;
     @FindBy(id = "Add To Cart")
-    WebElement add;
+    private WebElement add;
     @FindBy(xpath = "//button[text()='added']")
-    WebElement addedButton;
+    private WebElement addedButton;
     @FindBy (xpath = "//li[text()='My Profile']")
-    WebElement prfile;
+    private WebElement prfile;
     @FindBy(xpath = "//li[text()='Wish List']")
-    WebElement wishList;
+    private WebElement wishList;
     @FindBy(xpath = "//*[name()='svg' and @data-testid='ShoppingBagIcon']")
-    WebElement myOrder;
+    private WebElement myOrder;
     @FindBy(xpath = "//li[text()='My Wallet']")
-    WebElement myWallet;
+    private WebElement myWallet;
     @FindBy(xpath = "//li[text()='My Likes']")
-    WebElement myLikes;
+    private WebElement myLikes;
     @FindBy(xpath = "//li[text()='Logout']")
-    WebElement logout;
+    private WebElement logout;
+
+    public WebElement getHomeButton() {
+        return homeButton;
+    }
+
+    public WebElement getSerchBar() {
+        return serchBar;
+    }
+
+    public WebElement getSearchButton() {
+        return searchButton;
+    }
+
+    public WebElement getCategoryDropDown() {
+        return categoryDropDown;
+    }
+
+    public WebElement getViewCart() {
+        return viewCart;
+    }
+
+    public WebElement getAccountSettingIcon() {
+        return accountSettingIcon;
+    }
+
+    public WebElement getItem() {
+        return item;
+    }
+
+    public WebElement getAdd() {
+        return add;
+    }
+
+    public WebElement getAddedButton() {
+        return addedButton;
+    }
+
+    public WebElement getPrfile() {
+        return prfile;
+    }
+
+    public WebElement getWishList() {
+        return wishList;
+    }
+
+    public WebElement getMyOrder() {
+        return myOrder;
+    }
+
+    public WebElement getMyWallet() {
+        return myWallet;
+    }
+
+    public WebElement getMyLikes() {
+        return myLikes;
+    }
+
+    public WebElement getLogout() {
+        return logout;
+    }
+
     public HomePage(){
         PageFactory.initElements(driver,this);
     }
@@ -53,17 +112,17 @@ public class HomePage extends TestBase{
        return driver.getTitle();
     }
     public void homeButton(){
-        homeButton.click();
+        getHomeButton().click();
     }
 
     public void searchBar(String item)
     {
-        serchBar.sendKeys(item);
-        searchButton.click();
+        getSerchBar().sendKeys(item);
+        getSearchButton().click();
     }
     public void categoryDropDown(String choice)
     {
-        Select select= new Select(categoryDropDown);
+        Select select= new Select(getCategoryDropDown());
         switch (choice)
         {
             case "beauty":
@@ -120,7 +179,7 @@ public class HomePage extends TestBase{
     public void item(){
        for(;;){
            try {
-               js.executeScript("arguments[0].click()",item);
+               js.executeScript("arguments[0].click()",getItem());
                break;
            }
            catch (WebDriverException e){
@@ -131,7 +190,7 @@ public class HomePage extends TestBase{
     public void addToCart() throws InterruptedException {
         for(;;){
             try{
-                js.executeScript("arguments[0].click()",add);
+                js.executeScript("arguments[0].click()",getAdd());
             }
             catch (WebDriverException e){
 
@@ -139,11 +198,11 @@ public class HomePage extends TestBase{
         }
     }
     public String added(){
-        return addedButton.getText();
+        return getAddedButton().getText();
     }
     public ViewCartPage viewCart()
     {
-        viewCart.click();
+        getViewCart().click();
         return new ViewCartPage();
     }
 
@@ -154,30 +213,30 @@ public class HomePage extends TestBase{
                 break;
             }
             catch (Exception e){
-                js.executeScript("arguments[0].click()",accountSettingIcon);
+                js.executeScript("arguments[0].click()",getAccountSettingIcon());
                 break;
             }
         }
     }
     public void profile() {
-        prfile.click();
+        getPrfile().click();
     }
     public void wishList(){
-        wishList.click();
+        getWishList().click();
     }
     public void myWallet(){
-        myWallet.click();
+        getMyWallet().click();
     }
     public void myLikes(){
-        myLikes.click();
+        getMyLikes().click();
     }
     public LoginPage logout()
     {
-        logout.click();
+        getLogout().click();
         return new LoginPage();
     }
     public MyOrdersPage myOrders(){
-        myOrder.click();
+        getMyOrder().click();
         return new MyOrdersPage();
     }
 }

@@ -9,34 +9,59 @@ import java.nio.file.WatchEvent;
 
 public class MyWalletPage extends TestBase {
     @FindBy(xpath = "//button[text()='Add Money']")
-    WebElement addMoneyButton;
+    private WebElement addMoneyButton;
     @FindBy(xpath = "//button[text()='Use Coupon']")
-    WebElement useCouponButton;
+    private WebElement useCouponButton;
     @FindBy(xpath = "//button[text()='View Transactions']")
-    WebElement viewTransactionButton;
+    private WebElement viewTransactionButton;
     @FindBy(id = "Coupon Code")
-    WebElement couponCode;
+    private WebElement couponCode;
     @FindBy(id = "Verify")
-    WebElement verifyButton;
+    private WebElement verifyButton;
     @FindBy(linkText = "Home")
-    WebElement homeButton;
+    private WebElement homeButton;
+
+    public WebElement getAddMoneyButton() {
+        return addMoneyButton;
+    }
+
+    public WebElement getUseCouponButton() {
+        return useCouponButton;
+    }
+
+    public WebElement getViewTransactionButton() {
+        return viewTransactionButton;
+    }
+
+    public WebElement getCouponCode() {
+        return couponCode;
+    }
+
+    public WebElement getVerifyButton() {
+        return verifyButton;
+    }
+
+    public WebElement getHomeButton() {
+        return homeButton;
+    }
+
     public void addMoney(){
-        addMoneyButton.click();
+        getAddMoneyButton().click();
     }
     public void useCouponCode(){
-        useCouponButton.click();
+        getUseCouponButton().click();
     }
     public void viewTransaction(){
-        viewTransactionButton.click();
+        getViewTransactionButton().click();
     }
     public void couponCode(String coupon){
-        couponCode.sendKeys(coupon);
+        getCouponCode().sendKeys(coupon);
     }
     public void verifyButton(){
-        verifyButton.click();
+        getVerifyButton().click();
     }
     public HomePage home(){
-        homeButton.click();
+        getHomeButton().click();
         return new HomePage();
     }
 }

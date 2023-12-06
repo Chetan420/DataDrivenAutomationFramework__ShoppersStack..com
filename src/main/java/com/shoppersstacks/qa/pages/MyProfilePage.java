@@ -9,57 +9,102 @@ import java.util.List;
 
 public class MyProfilePage extends TestBase {
     @FindBy(xpath = "//li[text()='My Profile']")
-    WebElement myProfile;
+    private WebElement myProfile;
     @FindBy(xpath = "//button[contains(text(),'Edit')]")
-    WebElement editProfile;
+    private WebElement editProfile;
     @FindBy(id="First Name")
-    WebElement firstName;
+    private WebElement firstName;
     @FindBy(id = "Last Name")
-    WebElement lastName;
+    private WebElement lastName;
     @FindBy(xpath = "//label[text()='Date of Birth']")
-    WebElement date;
+    private WebElement date;
     @FindBy(id="Phone Number")
-    WebElement phoneNumber;
+    private WebElement phoneNumber;
     @FindBy (id="Country")
-    WebElement Country;
+    private WebElement Country;
     @FindBy(id="State")
-    WebElement State;
+    private WebElement State;
     @FindBy(id="City")
-    WebElement City;
+    private WebElement City;
     @FindBy(id = "submit")
-    WebElement submitButton;
+    private WebElement submitButton;
     @FindBy(xpath = "//h2[text()='Edit Profile ']")
-    WebElement Title;
+    private WebElement Title;
+
+    public WebElement getMyProfile() {
+        return myProfile;
+    }
+
+    public WebElement getEditProfile() {
+        return editProfile;
+    }
+
+    public WebElement getFirstName() {
+        return firstName;
+    }
+
+    public WebElement getLastName() {
+        return lastName;
+    }
+
+    public WebElement getDate() {
+        return date;
+    }
+
+    public WebElement getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public WebElement getCountry() {
+        return Country;
+    }
+
+    public WebElement getState() {
+        return State;
+    }
+
+    public WebElement getCity() {
+        return City;
+    }
+
+    public WebElement getSubmitButton() {
+        return submitButton;
+    }
+
+    public WebElement getTitle() {
+        return Title;
+    }
+
     public String popUpTitle(){
-        return Title.getText();
+        return getTitle().getText();
     }
     public void myProfile(){
-        myProfile.click();
+        getMyProfile().click();
     }
     public void editProfile(){
-        editProfile.click();
+        getEditProfile().click();
     }
     public void firstName(String fname){
-        firstName.sendKeys(fname);
+        getFirstName().sendKeys(fname);
     }
     public void lastName(String lname){
-        lastName.sendKeys(lname);
+        getLastName().sendKeys(lname);
     }
     public void date(String d){
-        date.sendKeys(d);
+        getDate().sendKeys(d);
     }
     public void phoneNumber(String number){
-        phoneNumber.sendKeys(number);
+        getPhoneNumber().sendKeys(number);
     }
 
     public void countryDropDown(String value){
-        dropDownHandling(Country,value);
+        dropDownHandling(getCountry(),value);
     }
     public void stateDropDown(String value){
-        dropDownHandling(State,value);
+        dropDownHandling(getState(),value);
     }
     public void cityDropDown(String value){
-        dropDownHandling(City,value);
+        dropDownHandling(getCity(),value);
     }
     public void dropDownHandling(WebElement element,String value){
         Select dropDown=new Select(element);
@@ -71,7 +116,7 @@ public class MyProfilePage extends TestBase {
         }
     }
     public void submit(){
-        submitButton.submit();
+        getSubmitButton().submit();
     }
 
 }

@@ -17,19 +17,32 @@ import java.io.IOException;
 
 public class OrderConfirmationPage extends TestBase {
     @FindBy(xpath = "//div[text()='Created']")
-    WebElement createdPopUp;
+    private WebElement createdPopUp;
     @FindBy(xpath = "//button[@aria-label='close']")
-    WebElement createdPopUpClose;
+    private WebElement createdPopUpClose;
     @FindBy(linkText ="Home")
-    WebElement homeButton;
+    private WebElement homeButton;
+
+    public WebElement getCreatedPopUp() {
+        return createdPopUp;
+    }
+
+    public WebElement getCreatedPopUpClose() {
+        return createdPopUpClose;
+    }
+
+    public WebElement getHomeButton() {
+        return homeButton;
+    }
+
     public OrderConfirmationPage(){
         PageFactory.initElements(driver,this);
     }
     public String createdPopUpText(){
-        return createdPopUp.getText();
+        return getCreatedPopUp().getText();
     }
     public void createdPopUpCloseButton() {
-        createdPopUpClose.click();
+        getCreatedPopUpClose().click();
     }
     public void orderConfirmScreenShot() throws IOException, AWTException {
         int num= random.nextInt(1,100);
@@ -52,7 +65,7 @@ public class OrderConfirmationPage extends TestBase {
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
     }
     public HomePage homeButton(){
-        homeButton.click();
+        getHomeButton().click();
         return new HomePage();
     }
 }

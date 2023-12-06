@@ -8,36 +8,75 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MyOrdersPage extends TestBase {
     @FindBy(linkText ="Home")
-    WebElement homeButton;
+    private WebElement homeButton;
     @FindBy(xpath = "//button[text()='Invoice'][1]")
-    WebElement invoiceButton;
+    private WebElement invoiceButton;
     @FindBy(xpath = "//button[text()='Cancel Order']")
-    WebElement cancelOrder;
+    private WebElement cancelOrder;
     @FindBy(xpath = "(//button[text()='Yes'])[1]")
-    WebElement yes;
+    private WebElement yes;
     @FindBy(xpath = "//button[(text()='Cancel')]")
-    WebElement no;
+    private WebElement no;
     @FindBy(xpath = "//button[text()='See']")
-    WebElement seeTermsAndCon;
+    private WebElement seeTermsAndCon;
     @FindBy(xpath = "//button[text(),'Close']")
-    WebElement close;
+    private WebElement close;
     @FindBy(xpath = "//div[text()='Order has been Cancelled']")
-    WebElement cancelMsg;
+    private WebElement cancelMsg;
     @FindBy(xpath = "//button[@aria-label='close']")
-    WebElement cancelMsgClose;
+    private WebElement cancelMsgClose;
+
+
+    public WebElement getHomeButton() {
+        return homeButton;
+    }
+
+    public WebElement getInvoiceButton() {
+        return invoiceButton;
+    }
+
+    public WebElement getCancelOrder() {
+        return cancelOrder;
+    }
+
+    public WebElement getYes() {
+        return yes;
+    }
+
+    public WebElement getNo() {
+        return no;
+    }
+
+    public WebElement getSeeTermsAndCon() {
+        return seeTermsAndCon;
+    }
+
+    public WebElement getClose() {
+        return close;
+    }
+
+    public WebElement getCancelMsg() {
+        return cancelMsg;
+    }
+
+    public WebElement getCancelMsgClose() {
+        return cancelMsgClose;
+    }
+
+
     public MyOrdersPage(){
         PageFactory.initElements(driver,this);
     }
     public void invoiceButton(){
-        invoiceButton.click();
+        getInvoiceButton().click();
     }
     public void cancelOrderButton(){
-        cancelOrder.click();
+        getCancelOrder().click();
     }
     public void yesButton(){
         for(;;){
             try{
-                js.executeScript("arguments[0].click()",yes);
+                js.executeScript("arguments[0].click()",getYes());
                 break;
             }
             catch (WebDriverException e){
@@ -46,22 +85,22 @@ public class MyOrdersPage extends TestBase {
         }
     }
     public void cancel(){
-        no.click();
+        getNo().click();
     }
     public void seeTermsAndConditionLink(){
-        seeTermsAndCon.click();
+        getSeeTermsAndCon().click();
     }
     public void closeTermsAndCondition(){
-        close.click();
+        getClose().click();
     }
     public String cancelToastMsg(){
-        return cancelMsg.getText();
+        return getCancelMsg().getText();
     }
     public void cancelToastMsgClose(){
-        cancelMsgClose.click();
+        getCancelMsgClose().click();
     }
     public HomePage homeButton(){
-        homeButton.click();
+        getHomeButton().click();
         return new HomePage();
     }
 }

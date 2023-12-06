@@ -11,45 +11,106 @@ import java.awt.event.KeyEvent;
 
 public class PaymentPage extends TestBase {
     @FindBy(css = "input[value='Net Banking']")
-    WebElement netBanking;
+    private WebElement netBanking;
     @FindBy(css = "input[value='COD']")
-    WebElement cod;
+    private WebElement cod;
     @FindBy(xpath = "//button[text()='Clear Selection']")
-    WebElement clearSelction;
+    private WebElement clearSelction;
     @FindBy(xpath = "//button[text()='Add Card']")
-    WebElement addCard;
+    private WebElement addCard;
     @FindBy(xpath = "(//fieldset[contains(@class,'MuiOutlinedInput')])[1]")
-    WebElement holderName;
+    private WebElement holderName;
     @FindBy(xpath = "(//fieldset[contains(@class,'MuiOutlinedInput')])[2]")
-    WebElement cardNumber;
+    private WebElement cardNumber;
     @FindBy(xpath = "(//fieldset[contains(@class,'MuiOutlinedInput')])[3]")
-    WebElement pin;
+    private WebElement pin;
     @FindBy(xpath = "(//fieldset[contains(@class,'MuiOutlinedInput')])[4]")
-    WebElement expiryMonth;
+    private WebElement expiryMonth;
     @FindBy(xpath = "(//fieldset[contains(@class,'MuiOutlinedInput')])[5]")
-    WebElement expiryYear;
+    private WebElement expiryYear;
     @FindBy(xpath = "(//fieldset[contains(@class,'MuiOutlinedInput')])[6]")
-    WebElement cvv;
+    private WebElement cvv;
     @FindBy(xpath = "//input[@value='DEBIT']")
-    WebElement debit;
+    private WebElement debit;
     @FindBy(xpath = "//input[@value='CREDIT']")
-    WebElement credit;
+    private WebElement credit;
     @FindBy(xpath = "//button[text()='Add']")
-    WebElement add;
+    private WebElement add;
     @FindBy(xpath = "//*[name()='svg' and @data-testid='CloseIcon']")
-    WebElement closeIcon;
+    private WebElement closeIcon;
     @FindBy(xpath = "//button[text()='Proceed']")
-    WebElement proceedButton;
+    private WebElement proceedButton;
+
+    public WebElement getNetBanking() {
+        return netBanking;
+    }
+
+    public WebElement getCod() {
+        return cod;
+    }
+
+    public WebElement getClearSelction() {
+        return clearSelction;
+    }
+
+    public WebElement getAddCard() {
+        return addCard;
+    }
+
+    public WebElement getHolderName() {
+        return holderName;
+    }
+
+    public WebElement getCardNumber() {
+        return cardNumber;
+    }
+
+    public WebElement getPin() {
+        return pin;
+    }
+
+    public WebElement getExpiryMonth() {
+        return expiryMonth;
+    }
+
+    public WebElement getExpiryYear() {
+        return expiryYear;
+    }
+
+    public WebElement getCvv() {
+        return cvv;
+    }
+
+    public WebElement getDebit() {
+        return debit;
+    }
+
+    public WebElement getCredit() {
+        return credit;
+    }
+
+    public WebElement getAdd() {
+        return add;
+    }
+
+    public WebElement getCloseIcon() {
+        return closeIcon;
+    }
+
+    public WebElement getProceedButton() {
+        return proceedButton;
+    }
+
     public PaymentPage(){
         PageFactory.initElements(driver,this);
     }
     public  void netBankingRadioButton(){
-        netBanking.click();
+        getNetBanking().click();
     }
     public void codRadioButton(){
         for (;;){
             try{
-                cod.click();
+                getCod().click();
                 break;
             }
             catch (WebDriverException e){
@@ -58,51 +119,48 @@ public class PaymentPage extends TestBase {
         }
     }
     public void clearSelectionButton(){
-        clearSelction.click();
+        getClearSelction().click();
     }
     public void addCardButton(){
-        addCard.click();
+        getAddCard().click();
     }
     public void holderName(String name) {
-        holderName.sendKeys(name);
+        getHolderName().sendKeys(name);
     }
     public void cardNumber(String Number){
-        cardNumber.sendKeys(Number);
+        getCardNumber().sendKeys(Number);
     }
     public void pinNumber(String num){
-        pin.sendKeys(num);
+        getPin().sendKeys(num);
     }
     public void expiryMonth(String month){
-        expiryMonth.sendKeys(month);
+        getExpiryMonth().sendKeys(month);
     }
     public void expiryYear(String year){
-        expiryYear.sendKeys(year);
+        getExpiryYear().sendKeys(year);
     }
     public void cvvAdd(String cvvNum){
-        cvv.sendKeys(cvvNum);
+        getCvv().sendKeys(cvvNum);
     }
     public void debitRadioButton(){
-        debit.click();
+        getDebit().click();
     }
     public void creditRadioButton(){
-        credit.click();
+        getCredit().click();
     }
     public void add(){
-        add.click();
+        getAdd().click();
     }
     public void closeIconButton(){
-        closeIcon.click();
+        getCloseIcon().click();
     }
     public void saveAddressAndCancelAdressPopUp() {
         robot.delay(1000);
         robot.keyPress(KeyEvent.VK_ESCAPE);
         robot.keyRelease(KeyEvent.VK_ESCAPE);
-//        robot.mouseMove(1350,400);
-//        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-//        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
     }
     public OrderConfirmationPage proceedButton(){
-        proceedButton.click();
+        getProceedButton().click();
         return new OrderConfirmationPage();
     }
 }

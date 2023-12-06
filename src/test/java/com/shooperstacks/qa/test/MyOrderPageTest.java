@@ -6,9 +6,11 @@ import org.openqa.selenium.WebDriverException;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import java.awt.*;
 
+@Listeners
 public class MyOrderPageTest extends TestBase {
     LoginPage loginPage;
     HomePage homePage;

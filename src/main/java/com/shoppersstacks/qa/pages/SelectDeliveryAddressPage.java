@@ -10,13 +10,31 @@ import java.awt.event.KeyEvent;
 
 public class SelectDeliveryAddressPage extends TestBase {
     @FindBy(xpath = "//h3[text()='Select a delivery address']")
-    WebElement addressText;
+    private WebElement addressText;
     @FindBy(partialLinkText = "Add New Address")
-    WebElement addNewAddress;
+    private WebElement addNewAddress;
     @FindBy(xpath = "(//input[@name='address'])[1]")
-    WebElement addAdressRadioButton;
+    private WebElement addAdressRadioButton;
     @FindBy(xpath = "//button[text()='Proceed']")
-    WebElement proceedButton;
+    private WebElement proceedButton;
+
+    public WebElement getAddressText() {
+        return addressText;
+    }
+
+    public WebElement getAddNewAddress() {
+        return addNewAddress;
+    }
+
+    public WebElement getAddAdressRadioButton() {
+        return addAdressRadioButton;
+    }
+
+    public WebElement getProceedButton() {
+        return proceedButton;
+    }
+
+
     public SelectDeliveryAddressPage(){
         PageFactory.initElements(driver,this);
     }
@@ -29,10 +47,10 @@ public class SelectDeliveryAddressPage extends TestBase {
         return driver.getTitle();
     }
     public void addAddressRadioButton() {
-        addAdressRadioButton.click();
+        getAddAdressRadioButton().click();
     }
     public AddAddressPage addNewAddress() {
-        addNewAddress.click();
+        getAddNewAddress().click();
         return new AddAddressPage();
     }
     public void saveAddressAndCancelAdressPopUp() {
@@ -42,7 +60,7 @@ public class SelectDeliveryAddressPage extends TestBase {
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
     }
     public PaymentPage proceedButton(){
-        proceedButton.click();
+        getProceedButton().click();
         return new PaymentPage();
     }
 }

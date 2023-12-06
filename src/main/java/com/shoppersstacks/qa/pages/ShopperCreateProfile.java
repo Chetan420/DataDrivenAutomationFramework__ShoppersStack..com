@@ -7,127 +7,225 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ShopperCreateProfile extends TestBase {
     @FindBy(id = "signIn")
-    WebElement signIn;
+    private WebElement signIn;
     @FindBy(id = "First Name")
-    WebElement firstName;
+    private WebElement firstName;
     @FindBy(id="Last Name")
-    WebElement lastName;
+    private WebElement lastName;
     @FindBy(id = "Male")
-    WebElement maleRadioButton;
+    private WebElement maleRadioButton;
     @FindBy(id="Female")
-    WebElement femaleRdioButton;
+    private WebElement femaleRdioButton;
     @FindBy(id="Other")
-    WebElement otherRadioButton;
+    private WebElement otherRadioButton;
     @FindBy(id = "Phone Number")
-    WebElement phoneNumber;
+    private WebElement phoneNumber;
     @FindBy(id = "Email Address")
-    WebElement emailAdress;
+    private WebElement emailAdress;
     @FindBy(id = "Password")
-    WebElement password;
+    private WebElement password;
     @FindBy(id="Confirm Password")
-    WebElement confirmPassword;
+    private WebElement confirmPassword;
     @FindBy(id = "Terms and Conditions")
-    WebElement termsAndCon;
+    private WebElement termsAndCon;
     @FindBy(className = "input[class='PrivateSwitchBase-input css-1m9pwf3']")
-    WebElement IagreeTermsCon;
+    private WebElement IagreeTermsCon;
     @FindBy(xpath = "(//button[contains(@class,'MuiButtonBase')])[4]")
-    WebElement agreeButton;
+    private WebElement agreeButton;
     @FindBy(xpath = "(//button[contains(@class,'MuiButtonBase')])[3]")
-    WebElement cancelButton;
+    private WebElement cancelButton;
     @FindBy(css = "svg[data-testid='ClearIcon']")
-    WebElement cancelIcon;
+    private WebElement cancelIcon;
     @FindBy(id = "scroll-dialog-title")
-    WebElement popUpText;
+    private WebElement popUpText;
     @FindBy(xpath = "//h1[text()='Create Your Profile']")
-    WebElement createYourProfile;
+    private WebElement createYourProfile;
     @FindBy(id = "First Name-helper-text")
-    WebElement firstnameError;
+    private WebElement firstnameError;
     @FindBy(id = "Last Name-helper-text")
-    WebElement lastNameError;
+    private WebElement lastNameError;
     @FindBy(id = "Phone Number-helper-text")
-    WebElement phoneNumberError;
+    private WebElement phoneNumberError;
     @FindBy(id="Email Address-helper-text")
-    WebElement emailError;
+    private WebElement emailError;
     @FindBy(id = "password-error")
-    WebElement passError;
+    private WebElement passError;
     @FindBy(id = "cnfPassword-error")
-    WebElement conPassError;
+    private WebElement conPassError;
     @FindBy(id="Register")
-    WebElement register;
+    private WebElement register;
+
+    public WebElement getSignIn() {
+        return signIn;
+    }
+
+    public WebElement getFirstName() {
+        return firstName;
+    }
+
+    public WebElement getLastName() {
+        return lastName;
+    }
+
+    public WebElement getMaleRadioButton() {
+        return maleRadioButton;
+    }
+
+    public WebElement getFemaleRdioButton() {
+        return femaleRdioButton;
+    }
+
+    public WebElement getOtherRadioButton() {
+        return otherRadioButton;
+    }
+
+    public WebElement getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public WebElement getEmailAdress() {
+        return emailAdress;
+    }
+
+    public WebElement getPassword() {
+        return password;
+    }
+
+    public WebElement getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public WebElement getTermsAndCon() {
+        return termsAndCon;
+    }
+
+    public WebElement getIagreeTermsCon() {
+        return IagreeTermsCon;
+    }
+
+    public WebElement getAgreeButton() {
+        return agreeButton;
+    }
+
+    public WebElement getCancelButton() {
+        return cancelButton;
+    }
+
+    public WebElement getCancelIcon() {
+        return cancelIcon;
+    }
+
+    public WebElement getPopUpText() {
+        return popUpText;
+    }
+
+    public WebElement getCreateYourProfile() {
+        return createYourProfile;
+    }
+
+    public WebElement getFirstnameError() {
+        return firstnameError;
+    }
+
+    public WebElement getLastNameError() {
+        return lastNameError;
+    }
+
+    public WebElement getPhoneNumberError() {
+        return phoneNumberError;
+    }
+
+    public WebElement getEmailError() {
+        return emailError;
+    }
+
+    public WebElement getPassError() {
+        return passError;
+    }
+
+    public WebElement getConPassError() {
+        return conPassError;
+    }
+
+    public WebElement getRegister() {
+        return register;
+    }
+
+
 
     public ShopperCreateProfile(){
         PageFactory.initElements(driver,this);
     }
     public void firstName(String FirstName)
     {
-        firstName.sendKeys(FirstName);
+        getFirstName().sendKeys(FirstName);
     }
     public void lastName(String LastName)
     {
-        lastName.sendKeys(LastName);
+        getLastName().sendKeys(LastName);
     }
     public void maleRadioButton()
     {
-        maleRadioButton.click();
+        getMaleRadioButton().click();
     }
     public void femaleRadioButton()
     {
-        femaleRdioButton.click();
+        getFemaleRdioButton().click();
     }
     public void otherRadioButton()
     {
-        otherRadioButton.click();
+        getOtherRadioButton().click();
     }
     public void phoneNumber(String PhoneNumber)
     {
-        phoneNumber.sendKeys(PhoneNumber);
+        getPhoneNumber().sendKeys(PhoneNumber);
     }
     public void emailAddress(String Email)
     {
-        emailAdress.sendKeys(Email);
+        getEmailAdress().sendKeys(Email);
     }
     public void password(String Password)
     {
-        password.sendKeys(Password);
+        getPassword().sendKeys(Password);
     }
     public void confirmPassword(String Password)
     {
-        confirmPassword.sendKeys(Password);
+        getConfirmPassword().sendKeys(Password);
     }
     public void termsAndCondition()
     {
-        termsAndCon.click();
+        getTermsAndCon().click();
     }
     public void iAgreeTermsAndCon()
     {
-        IagreeTermsCon.click();
+        getIagreeTermsCon().click();
     }
     public void agreeButton()
     {
-        agreeButton.click();
+        getAgreeButton().click();
     }
     public void cancelButton()
     {
-        cancelButton.click();
+        getCancelButton().click();
     }
     public void cancelIcon()
     {
-        cancelIcon.click();
+        getCancelIcon().click();
     }
     public void popupText()
     {
-        System.out.println(popUpText.getText());
+        System.out.println(getPopUpText().getText());
     }
     public void signIn()
     {
-        signIn.click();
+        getSignIn().click();
     }
     public String createYourProfile()
     {
         String expectedText="Create Your Profile";
-        if(createYourProfile.getText().equals(expectedText))
+        if(getCreateYourProfile().getText().equals(expectedText))
         {
-            return createYourProfile.getText();
+            return getCreateYourProfile().getText();
         }
         else
         {
@@ -136,30 +234,30 @@ public class ShopperCreateProfile extends TestBase {
     }
     public String firstNameError()
     {
-       return firstnameError.getText();
+       return getFirstnameError().getText();
     }
     public String lastNameError()
     {
-        return lastNameError.getText();
+        return getLastNameError().getText();
     }
     public String phoneNumberError()
     {
-        return phoneNumberError.getText();
+        return getPhoneNumberError().getText();
     }
     public String emailAddressError()
     {
-        return emailError.getText();
+        return getEmailError().getText();
     }
     public String passwordError()
     {
-        return passError.getText();
+        return getPassError().getText();
     }
     public String confirmPasswordError()
     {
-        return conPassError.getText();
+        return getConPassError().getText();
     }
     public LoginPage registerButton(){
-        register.click();
+        getRegister().click();
         return new LoginPage();
     }
 

@@ -7,19 +7,53 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ViewCartPage extends TestBase {
     @FindBy(xpath = "//a[text()='cart']")
-    WebElement cart;
+    private WebElement cart;
     @FindBy(id="buynow_fl")
-    WebElement buyNow;
+    private WebElement buyNow;
     @FindBy(xpath = "//span[text()='Continue Shopping']")
-    WebElement continueShopping;
+    private WebElement continueShopping;
     @FindBy(xpath = "//button[text()='Remove from cart']")
-    WebElement removeFromCart;
+    private WebElement removeFromCart;
     @FindBy(xpath = "increase")
-    WebElement increaseItem;
+    private WebElement increaseItem;
     @FindBy(id="decrease")
-    WebElement decreaseItem;
+    private WebElement decreaseItem;
     @FindBy(xpath = "//div[@class='cart_subtotalContainer__S6AbY']")
-    WebElement itemDetails;
+    private WebElement itemDetails;
+
+    public WebElement getCart() {
+        return cart;
+    }
+
+    public WebElement getBuyNow() {
+        return buyNow;
+    }
+
+    public WebElement getContinueShopping() {
+        return continueShopping;
+    }
+
+    public WebElement getRemoveFromCart() {
+        return removeFromCart;
+    }
+
+    public WebElement getIncreaseItem() {
+        return increaseItem;
+    }
+
+    public WebElement getDecreaseItem() {
+        return decreaseItem;
+    }
+
+    public WebElement getItemDetails() {
+        return itemDetails;
+    }
+
+
+    public ViewCartPage(){
+        PageFactory.initElements(driver,this);
+    }
+
     public String viewCartPageTitle() {
         try {
             Thread.sleep(1000);
@@ -27,27 +61,24 @@ public class ViewCartPage extends TestBase {
         }
         return driver.getTitle();
     }
-    public ViewCartPage(){
-        PageFactory.initElements(driver,this);
-    }
     public String cartText(){
-        return cart.getText();
+        return getCart().getText();
     }
     public SelectDeliveryAddressPage buyNow(){
-        buyNow.click();
+        getBuyNow().click();
         return new SelectDeliveryAddressPage();
     }
     public void continueShopping(){
-        continueShopping.click();
+        getContinueShopping().click();
     }
     public void removeFromCart(){
-        removeFromCart.click();
+        getRemoveFromCart().click();
     }
-    public void itemIncreaseButtton(){
-        increaseItem.click();
+    public void itemIncreaseButton(){
+        getIncreaseItem().click();
     }
     public void intemDecreaseButton(){
-        decreaseItem.click();
+        getDecreaseItem().click();
     }
 
 }

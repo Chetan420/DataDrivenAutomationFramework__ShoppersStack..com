@@ -12,6 +12,7 @@ import org.testng.annotations.*;
 import java.awt.*;
 import java.io.IOException;
 
+@Listeners
 public class LoginPageTest extends TestBase {
     TestUtil util;
     LoginPage loginPage;
@@ -19,6 +20,7 @@ public class LoginPageTest extends TestBase {
     public LoginPageTest() {
         super();
     }
+
 
     @BeforeMethod
     public void setUp() throws AWTException {
@@ -68,6 +70,7 @@ public class LoginPageTest extends TestBase {
         String expected="ShoppersStack | Home";
         if(exp.equals("Valid"))
         {
+            Thread.sleep(1000);
             String actual=homePage.homePageTitle();
             if(expected.equals(actual)) {
                 homePage.accountSettingIcon();
