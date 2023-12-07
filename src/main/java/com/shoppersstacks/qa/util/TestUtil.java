@@ -71,7 +71,7 @@ public class TestUtil extends TestBase {
     }
 
     public static void takeScreenShot() throws IOException {
-        String dateName=new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        String dateName=new SimpleDateFormat("yyyy.MM.dd.hh:mm.ss").format(new Date());
         TakesScreenshot ts=(TakesScreenshot) driver;
         File temp = ts.getScreenshotAs(OutputType.FILE);
         FileHandler.copy(temp,new File("./errorShots/ShoppersStack"+dateName+".jpg"));
