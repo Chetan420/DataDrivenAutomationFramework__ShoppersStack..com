@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+    <listeners>
+        <listener class-name="com.shoppersstacks.qa.util.ExtentReport"/>
+    </listeners>
     <test verbose="2" preserve-order="true"
-          name="C:/Users/cheta/IdeaProjects/ShoppersStack/src/test/java/com/shooperstacks/qa/test/LoginPageTest.java">
+          name="C:/Users/cheta/IdeaProjects/ShoppersStack/src/test/java/com/shooperstacks/qa/test/MyOrderPageTest.java">
         <classes>
-            <class name="com.shooperstacks.qa.test.LoginPageTest">
-                <methods>
-                    <include name="verifyTheLoginPageTitle"/>
-                    <include name="verifyHideIcon"/>
-                    <include name="loginTest"/>
-                    <include name="errorMessageValidation"/>
-                </methods>
-            </class>
+            <class name="com.shooperstacks.qa.test.LoginPageTest"/>
+            <class name="com.shooperstacks.qa.test.MyOrderPageTest"/>
         </classes>
     </test>
 </suite>
