@@ -35,7 +35,7 @@ public class LoginPageTest extends TestBase {
     @Test(priority = 1)
     public void verifyTheLoginPageTitle() throws InterruptedException {
         String actual=loginPage.loginButton();
-        String expected="ShoppersStack | Logi";
+        String expected="ShoppersStack | Login";
         Assert.assertEquals(actual,expected,"Title not matching");
     }
 
