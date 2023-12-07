@@ -38,7 +38,8 @@ public class TestBase {
     public TestBase(){
         try{
             prop=new Properties();
-            FileInputStream input=new FileInputStream("C:\\Users\\cheta\\IdeaProjects\\ShoppersStack\\src\\main\\java\\com\\shoppersstacks\\qa\\configure\\config.properties");
+            FileInputStream input=new FileInputStream("C:\\Users\\cheta\\IdeaProjects\\ShoppersStack\\" +
+                    "src\\main\\java\\com\\shoppersstacks\\qa\\configure\\config.properties");
             prop.load(input);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);

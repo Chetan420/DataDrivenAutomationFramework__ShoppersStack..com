@@ -12,7 +12,7 @@ import org.testng.annotations.*;
 import java.awt.*;
 import java.io.IOException;
 
-@Listeners
+@Listeners(com.shoppersstacks.qa.util.ExtentReport.class)
 public class LoginPageTest extends TestBase {
     TestUtil util;
     LoginPage loginPage;
@@ -35,7 +35,7 @@ public class LoginPageTest extends TestBase {
     @Test(priority = 1)
     public void verifyTheLoginPageTitle() throws InterruptedException {
         String actual=loginPage.loginButton();
-        String expected="ShoppersStack | Login";
+        String expected="ShoppersStack | Logi";
         Assert.assertEquals(actual,expected,"Title not matching");
     }
 

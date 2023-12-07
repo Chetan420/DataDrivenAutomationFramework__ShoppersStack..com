@@ -10,7 +10,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import java.awt.*;
 
-@Listeners
+@Listeners(com.shoppersstacks.qa.util.ExtentReport.class)
 public class MyOrderPageTest extends TestBase {
     LoginPage loginPage;
     HomePage homePage;

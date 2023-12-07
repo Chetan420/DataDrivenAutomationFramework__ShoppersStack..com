@@ -188,14 +188,8 @@ public class HomePage extends TestBase{
        }
     }
     public void addToCart() throws InterruptedException {
-        for(;;){
-            try{
-                js.executeScript("arguments[0].click()",getAdd());
-            }
-            catch (WebDriverException e){
-
-            }
-        }
+        Thread.sleep(2000);
+        js.executeScript("arguments[0].click()",getAdd());
     }
     public String added(){
         return getAddedButton().getText();
