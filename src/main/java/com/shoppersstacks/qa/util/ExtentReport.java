@@ -22,11 +22,11 @@ public class ExtentReport extends TestListenerAdapter {
     public ExtentTest extentTest;
     public void onStart(ITestContext testContext) {
         String timeStamp=new SimpleDateFormat("yyyy.MM.dd.hh.mm.ss").format(new Date());
-        String repName="Test-Report-"+timeStamp+",html";
+        String repName="TestReport-"+timeStamp+".html";
 
         sparkReporter=new ExtentSparkReporter("./TestOutput/"+repName);
         try {
-            sparkReporter.loadXMLConfig("./src/extent-config.xml");
+            sparkReporter.loadXMLConfig("C:\\Users\\cheta\\IdeaProjects\\ShoppersStack\\src\\extent-config.xml");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -42,21 +42,22 @@ public class ExtentReport extends TestListenerAdapter {
         sparkReporter.config().setTheme(Theme.DARK);
     }
 
-    public void onTestSuccess(ITestResult testResult){
-        extentTest=extentReports.createTest(testResult.getName());
-        extentTest.log(Status.PASS, MarkupHelper.createLabel(testResult.getName(), ExtentColor.GREEN));
+
+    public void onTestSuccess(ITestResult tr){
+        extentTest=extentReports.createTest(tr.getName());
+        extentTest.log(Status.PASS, MarkupHelper.createLabel(tr.getName(), ExtentColor.GREEN));
     }
-    public void onTestFailure(ITestResult testResult){
-        extentTest=extentReports.createTest(testResult.getName());
-        extentTest.log(Status.FAIL, MarkupHelper.createLabel(testResult.getName(), ExtentColor.RED));
+    public void onTestFailure(ITestResult tr){
+        extentTest=extentReports.createTest(tr.getName());
+        extentTest.log(Status.FAIL, MarkupHelper.createLabel(tr.getName(), ExtentColor.RED));
     }
 
-    public void onTestSkipped(ITestResult testResult){
-        extentTest=extentReports.createTest(testResult.getName());
-        extentTest.log(Status.SKIP,MarkupHelper.createLabel(testResult.getName(),ExtentColor.ORANGE));
+    public void onTestSkipped(ITestResult tr){
+        extentTest=extentReports.createTest(tr.getName());
+        extentTest.log(Status.SKIP,MarkupHelper.createLabel(tr.getName(),ExtentColor.ORANGE));
     }
 
-    public void onFinish(ITestResult testContext){
+    public void onFinish(ITestContext testContext) {
         extentReports.flush();
     }
 }

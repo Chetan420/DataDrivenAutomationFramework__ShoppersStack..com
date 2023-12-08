@@ -44,21 +44,7 @@ public class OrderConfirmationPage extends TestBase {
     public void createdPopUpCloseButton() {
         getCreatedPopUpClose().click();
     }
-    public void orderConfirmScreenShot() throws IOException, AWTException {
-        int num= random.nextInt(1,100);
-        String filename="ShopperStacks OrderConfirmation"+num+".jpeg";
 
-        File temp = ts.getScreenshotAs(OutputType.FILE);
-        File src=new File("./errorShots"+filename);
-        FileHandler.copy(temp,src);
-
-        Robot robot=new Robot();
-        Dimension dim=Toolkit.getDefaultToolkit().getScreenSize();
-        Rectangle rect=new Rectangle(dim);
-        BufferedImage bufferedImage=robot.createScreenCapture(rect);
-        String destinationPath=System.getProperty("user.dir")+"//errorShots"+filename;
-        ImageIO.write(bufferedImage,"jpeg",new File(destinationPath));
-    }
     public void saveAddressAndCancelAdressPopUp() {
         robot.mouseMove(1350,400);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);

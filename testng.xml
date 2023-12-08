@@ -5,7 +5,7 @@
         <listener class-name="com.shoppersstacks.qa.util.ExtentReport"/>
     </listeners>
     <test verbose="2" preserve-order="true"
-          name="C:/Users/cheta/IdeaProjects/ShoppersStack/src/test/java/com/shooperstacks/qa/test/MyOrderPageTest.java">
+          name="ShoppersStack Report">
         <classes>
             <class name="com.shooperstacks.qa.test.LoginPageTest"/>
             <class name="com.shooperstacks.qa.test.MyOrderPageTest"/>

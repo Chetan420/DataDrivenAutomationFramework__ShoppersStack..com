@@ -3,13 +3,19 @@
 <suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="ShoppersStack(failed)">
     <classes>
-      <class name="com.shooperstacks.qa.test.LoginPageTest">
+      <class name="com.shooperstacks.qa.test.MyOrderPageTest">
         <methods>
+          <include name="addItemToCart"/>
           <include name="tearDown"/>
+          <include name="cancelTheOrderProduct"/>
+          <include name="addAddressInAddAddressPage"/>
+          <include name="selectDeliveryAddress"/>
+          <include name="buyTheItemFromViewCart"/>
+          <include name="selectPaymentOption"/>
           <include name="setUp"/>
-          <include name="loginTest" invocation-numbers="0"/>
+          <include name="loginAsShopper"/>
         </methods>
-      </class> <!-- com.shooperstacks.qa.test.LoginPageTest -->
+      </class> <!-- com.shooperstacks.qa.test.MyOrderPageTest -->
     </classes>
   </test> <!-- ShoppersStack(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->
