@@ -105,12 +105,12 @@ public class PaymentPage extends TestBase {
         PageFactory.initElements(driver,this);
     }
     public  void netBankingRadioButton(){
-        getNetBanking().click();
+        netBanking.click();
     }
     public void codRadioButton(){
         for (;;){
             try{
-                getCod().click();
+                cod.click();
                 break;
             }
             catch (WebDriverException e){
@@ -119,40 +119,40 @@ public class PaymentPage extends TestBase {
         }
     }
     public void clearSelectionButton(){
-        getClearSelction().click();
+        clearSelction.click();
     }
     public void addCardButton(){
-        getAddCard().click();
+        addCard.click();
     }
     public void holderName(String name) {
-        getHolderName().sendKeys(name);
+        holderName.sendKeys(name);
     }
     public void cardNumber(String Number){
-        getCardNumber().sendKeys(Number);
+        cardNumber.sendKeys(Number);
     }
     public void pinNumber(String num){
-        getPin().sendKeys(num);
+        pin.sendKeys(num);
     }
     public void expiryMonth(String month){
-        getExpiryMonth().sendKeys(month);
+        expiryMonth.sendKeys(month);
     }
     public void expiryYear(String year){
-        getExpiryYear().sendKeys(year);
+        expiryYear.sendKeys(year);
     }
     public void cvvAdd(String cvvNum){
-        getCvv().sendKeys(cvvNum);
+        cvv.sendKeys(cvvNum);
     }
     public void debitRadioButton(){
-        getDebit().click();
+        debit.click();
     }
     public void creditRadioButton(){
-        getCredit().click();
+        credit.click();
     }
     public void add(){
-        getAdd().click();
+        add.click();
     }
     public void closeIconButton(){
-        getCloseIcon().click();
+        closeIcon.click();
     }
     public void saveAddressAndCancelAdressPopUp() {
         robot.delay(1000);
@@ -160,7 +160,7 @@ public class PaymentPage extends TestBase {
         robot.keyRelease(KeyEvent.VK_ESCAPE);
     }
     public OrderConfirmationPage proceedButton(){
-        getProceedButton().click();
+        proceedButton.click();
         return new OrderConfirmationPage();
     }
 }

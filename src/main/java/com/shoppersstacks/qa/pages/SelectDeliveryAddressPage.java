@@ -47,10 +47,10 @@ public class SelectDeliveryAddressPage extends TestBase {
         return driver.getTitle();
     }
     public void addAddressRadioButton() {
-        getAddAdressRadioButton().click();
+        addAdressRadioButton.click();
     }
     public AddAddressPage addNewAddress() {
-        getAddNewAddress().click();
+        addNewAddress.click();
         return new AddAddressPage();
     }
     public void saveAddressAndCancelAdressPopUp() {
@@ -60,7 +60,7 @@ public class SelectDeliveryAddressPage extends TestBase {
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
     }
     public PaymentPage proceedButton(){
-        getProceedButton().click();
+        proceedButton.click();
         return new PaymentPage();
     }
 }

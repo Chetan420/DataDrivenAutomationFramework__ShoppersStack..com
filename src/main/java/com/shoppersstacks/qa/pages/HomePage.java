@@ -112,17 +112,17 @@ public class HomePage extends TestBase{
        return driver.getTitle();
     }
     public void homeButton(){
-        getHomeButton().click();
+        homeButton.click();
     }
 
     public void searchBar(String item)
     {
-        getSerchBar().sendKeys(item);
-        getSearchButton().click();
+        serchBar.sendKeys(item);
+        searchButton.click();
     }
     public void categoryDropDown(String choice)
     {
-        Select select= new Select(getCategoryDropDown());
+        Select select= new Select(categoryDropDown);
         switch (choice)
         {
             case "beauty":
@@ -179,7 +179,7 @@ public class HomePage extends TestBase{
     public void item(){
        for(;;){
            try {
-               js.executeScript("arguments[0].click()",getItem());
+               js.executeScript("arguments[0].click()",item);
                break;
            }
            catch (WebDriverException e){
@@ -189,14 +189,14 @@ public class HomePage extends TestBase{
     }
     public void addToCart() throws InterruptedException {
         Thread.sleep(2000);
-        js.executeScript("arguments[0].click()",getAdd());
+        js.executeScript("arguments[0].click()",add);
     }
     public String added(){
-        return getAddedButton().getText();
+        return addedButton.getText();
     }
     public ViewCartPage viewCart()
     {
-        getViewCart().click();
+        viewCart.click();
         return new ViewCartPage();
     }
 
@@ -207,30 +207,30 @@ public class HomePage extends TestBase{
                 break;
             }
             catch (Exception e){
-                js.executeScript("arguments[0].click()",getAccountSettingIcon());
+                js.executeScript("arguments[0].click()",accountSettingIcon);
                 break;
             }
         }
     }
     public void profile() {
-        getPrfile().click();
+        prfile.click();
     }
     public void wishList(){
-        getWishList().click();
+        wishList.click();
     }
     public void myWallet(){
-        getMyWallet().click();
+        myWallet.click();
     }
     public void myLikes(){
-        getMyLikes().click();
+        myLikes.click();
     }
     public LoginPage logout()
     {
-        getLogout().click();
+        logout.click();
         return new LoginPage();
     }
     public MyOrdersPage myOrders(){
-        getMyOrder().click();
+        myOrder.click();
         return new MyOrdersPage();
     }
 }

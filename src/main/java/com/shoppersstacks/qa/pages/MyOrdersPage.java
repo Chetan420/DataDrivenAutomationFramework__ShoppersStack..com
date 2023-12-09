@@ -68,15 +68,15 @@ public class MyOrdersPage extends TestBase {
         PageFactory.initElements(driver,this);
     }
     public void invoiceButton(){
-        getInvoiceButton().click();
+        invoiceButton.click();
     }
     public void cancelOrderButton(){
-        getCancelOrder().click();
+        cancelOrder.click();
     }
     public void yesButton(){
         for(;;){
             try{
-                js.executeScript("arguments[0].click()",getYes());
+                js.executeScript("arguments[0].click()",yes);
                 break;
             }
             catch (WebDriverException e){
@@ -85,22 +85,22 @@ public class MyOrdersPage extends TestBase {
         }
     }
     public void cancel(){
-        getNo().click();
+        no.click();
     }
     public void seeTermsAndConditionLink(){
-        getSeeTermsAndCon().click();
+        seeTermsAndCon.click();
     }
     public void closeTermsAndCondition(){
-        getClose().click();
+        close.click();
     }
     public String cancelToastMsg(){
-        return getCancelMsg().getText();
+        return cancelMsg.getText();
     }
     public void cancelToastMsgClose(){
-        getCancelMsgClose().click();
+        cancelMsgClose.click();
     }
     public HomePage homeButton(){
-        getHomeButton().click();
+        homeButton.click();
         return new HomePage();
     }
 }

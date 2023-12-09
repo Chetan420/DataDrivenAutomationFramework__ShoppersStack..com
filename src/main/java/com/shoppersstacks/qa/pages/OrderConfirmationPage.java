@@ -39,10 +39,10 @@ public class OrderConfirmationPage extends TestBase {
         PageFactory.initElements(driver,this);
     }
     public String createdPopUpText(){
-        return getCreatedPopUp().getText();
+        return createdPopUp.getText();
     }
     public void createdPopUpCloseButton() {
-        getCreatedPopUpClose().click();
+        createdPopUpClose.click();
     }
 
     public void saveAddressAndCancelAdressPopUp() {
@@ -51,7 +51,7 @@ public class OrderConfirmationPage extends TestBase {
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
     }
     public HomePage homeButton(){
-        getHomeButton().click();
+        homeButton.click();
         return new HomePage();
     }
 }

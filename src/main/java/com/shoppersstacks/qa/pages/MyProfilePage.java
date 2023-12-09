@@ -76,35 +76,35 @@ public class MyProfilePage extends TestBase {
     }
 
     public String popUpTitle(){
-        return getTitle().getText();
+        return Title.getText();
     }
     public void myProfile(){
-        getMyProfile().click();
+        myProfile.click();
     }
     public void editProfile(){
-        getEditProfile().click();
+        editProfile.click();
     }
     public void firstName(String fname){
-        getFirstName().sendKeys(fname);
+        firstName.sendKeys(fname);
     }
     public void lastName(String lname){
-        getLastName().sendKeys(lname);
+        lastName.sendKeys(lname);
     }
     public void date(String d){
-        getDate().sendKeys(d);
+        date.sendKeys(d);
     }
     public void phoneNumber(String number){
-        getPhoneNumber().sendKeys(number);
+        phoneNumber.sendKeys(number);
     }
 
     public void countryDropDown(String value){
-        dropDownHandling(getCountry(),value);
+        dropDownHandling(Country,value);
     }
     public void stateDropDown(String value){
-        dropDownHandling(getState(),value);
+        dropDownHandling(State,value);
     }
     public void cityDropDown(String value){
-        dropDownHandling(getCity(),value);
+        dropDownHandling(City,value);
     }
     public void dropDownHandling(WebElement element,String value){
         Select dropDown=new Select(element);
@@ -116,7 +116,7 @@ public class MyProfilePage extends TestBase {
         }
     }
     public void submit(){
-        getSubmitButton().submit();
+        submitButton.submit();
     }
 
 }

@@ -62,23 +62,23 @@ public class ViewCartPage extends TestBase {
         return driver.getTitle();
     }
     public String cartText(){
-        return getCart().getText();
+        return cart.getText();
     }
     public SelectDeliveryAddressPage buyNow(){
-        getBuyNow().click();
+        buyNow.click();
         return new SelectDeliveryAddressPage();
     }
     public void continueShopping(){
-        getContinueShopping().click();
+        continueShopping.click();
     }
     public void removeFromCart(){
-        getRemoveFromCart().click();
+        removeFromCart.click();
     }
     public void itemIncreaseButton(){
-        getIncreaseItem().click();
+        increaseItem.click();
     }
     public void intemDecreaseButton(){
-        getDecreaseItem().click();
+        decreaseItem.click();
     }
 
 }

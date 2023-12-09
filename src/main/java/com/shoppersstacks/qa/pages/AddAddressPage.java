@@ -119,34 +119,34 @@ public class AddAddressPage extends TestBase {
         return driver.getTitle();
     }
     public void home() {
-        getHomeRadioButton().click();
+        homeRadioButton.click();
     }
     public void office() {
-        getOfficeRadioButton().click();
+        officeRadioButton.click();
     }
     public void other() {
-        getOtherRadioButton().click();
+        otherRadioButton.click();
     }
     public void name(String names){
-        getName().sendKeys(names);
+        name.sendKeys(names);
     }
     public void officeTextField(String office){
-        getOfficeInfoTextField().sendKeys(office);
+        officeInfoTextField.sendKeys(office);
     }
     public void streetTextFiled(String street){
-        getStreetInfo().sendKeys(street);
+        streetInfo.sendKeys(street);
     }
     public void landmark(String lndmark){
-        getLandmark().sendKeys(lndmark);
+        landmark.sendKeys(lndmark);
     }
     public void countryDropDown(String value){
-        dropDownHandling(getCountry(),value);
+        dropDownHandling(Country,value);
     }
     public void stateDropDown(String value){
-        dropDownHandling(getState(),value);
+        dropDownHandling(State,value);
     }
     public void cityDropDown(String value){
-        dropDownHandling(getCity(),value);
+        dropDownHandling(City,value);
     }
     public void dropDownHandling(WebElement element,String value){
         Select dropDown=new Select(element);
@@ -160,20 +160,20 @@ public class AddAddressPage extends TestBase {
 
     public void pincode(String pin)
     {
-        getPincode().sendKeys(pin);
+        pincode.sendKeys(pin);
     }
     public void pincodeInfo(){
-        getPincodeInfo().click();
+        pincodeInfo.click();
     }
     public void phoneNumber (String pno){
-        getPhoneNumber().sendKeys(pno);
+        phoneNumber.sendKeys(pno);
     }
     public SelectDeliveryAddressPage addAddress(){
-        getAddAddressButton().click();
+        addAddressButton.click();
         return new SelectDeliveryAddressPage();
     }
     public void addAddressCancel(){
-        getAddressCancel().click();
+        addressCancel.click();
     }
 
 }

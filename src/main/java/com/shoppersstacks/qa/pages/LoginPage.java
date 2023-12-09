@@ -113,58 +113,58 @@ public class LoginPage extends TestBase {
         PageFactory.initElements(driver,this);
     }
     public String msg(){
-        return getRegistrationMsg().getText();
+        return registrationMsg.getText();
     }
 
     public String  loginButton() throws InterruptedException {
-        wait.until(ExpectedConditions.elementToBeClickable(getLoginButton())).click();
+        wait.until(ExpectedConditions.elementToBeClickable(loginButton)).click();
         Thread.sleep(2000);
         return driver.getTitle();
     }
     public void registeredEmail(String username){
-        getEmailTextField().sendKeys(username);
+        emailTextField.sendKeys(username);
     }
     public void password(String password){
-        getPasswordTextField().sendKeys(password);
+        passwordTextField.sendKeys(password);
     }
     public void hideIcon()
     {
-        getHideButton().click();
+        hideButton.click();
     }
     public void forgetPasswordLink()
     {
-        getForgetPassword().click();
+        forgetPassword.click();
     }
     public void forgetEmailTextField(String forgetPassword)
     {
-        getForgetPassEmail().sendKeys(forgetPassword);
+        forgetPassEmail.sendKeys(forgetPassword);
     }
     public void proceedButton()
     {
-        getProceedButton().click();
+        proceedButton.click();
     }
     public String forgetPasswordEmailError()
     {
-        return getForgetEmailError().getText();
+        return forgetEmailError.getText();
     }
     public void createAccountButton()
     {
-        getCreateAccount().click();
+        createAccount.click();
     }
     public String buttonColor()
     {
-        return getLoginClickButton().getCssValue(ButtonColor);
+        return loginClickButton.getCssValue(ButtonColor);
     }
     public String createButton()
     {
-        return getCreateAccount().getCssValue(ButtonColor);
+        return createAccount.getCssValue(ButtonColor);
     }
     public String errorMessage(){
         robot.delay(2000);
-        return getError().getText();
+        return error.getText();
     }
     public HomePage login(){
-        getLoginClickButton().click();
+        loginClickButton.click();
         return new HomePage();
     }
 }

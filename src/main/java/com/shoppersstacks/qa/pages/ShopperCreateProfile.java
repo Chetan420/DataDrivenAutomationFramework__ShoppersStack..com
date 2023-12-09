@@ -4,6 +4,7 @@ import com.shoppersstacks.qa.base.TestBase;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
 
 public class ShopperCreateProfile extends TestBase {
     @FindBy(id = "signIn")
@@ -158,72 +159,72 @@ public class ShopperCreateProfile extends TestBase {
     }
     public void firstName(String FirstName)
     {
-        getFirstName().sendKeys(FirstName);
+        firstName.sendKeys(FirstName);
     }
     public void lastName(String LastName)
     {
-        getLastName().sendKeys(LastName);
+        lastName.sendKeys(LastName);
     }
     public void maleRadioButton()
     {
-        getMaleRadioButton().click();
+        maleRadioButton.click();
     }
     public void femaleRadioButton()
     {
-        getFemaleRdioButton().click();
+        femaleRdioButton.click();
     }
     public void otherRadioButton()
     {
-        getOtherRadioButton().click();
+        otherRadioButton.click();
     }
     public void phoneNumber(String PhoneNumber)
     {
-        getPhoneNumber().sendKeys(PhoneNumber);
+        phoneNumber.sendKeys(PhoneNumber);
     }
     public void emailAddress(String Email)
     {
-        getEmailAdress().sendKeys(Email);
+        emailAdress.sendKeys(Email);
     }
     public void password(String Password)
     {
-        getPassword().sendKeys(Password);
+        password.sendKeys(Password);
     }
     public void confirmPassword(String Password)
     {
-        getConfirmPassword().sendKeys(Password);
+        confirmPassword.sendKeys(Password);
     }
     public void termsAndCondition()
     {
-        getTermsAndCon().click();
+        termsAndCon.click();
     }
     public void iAgreeTermsAndCon()
     {
-        getIagreeTermsCon().click();
+        IagreeTermsCon.click();
     }
     public void agreeButton()
     {
-        getAgreeButton().click();
+        agreeButton.click();
     }
     public void cancelButton()
     {
-        getCancelButton().click();
+        cancelButton.click();
     }
     public void cancelIcon()
     {
-        getCancelIcon().click();
+        cancelIcon.click();
     }
     public void popupText()
     {
-        System.out.println(getPopUpText().getText());
+        Reporter.log(popUpText.getText());
     }
     public void signIn()
     {
-        getSignIn().click();
+        signIn.click();
     }
     public String createYourProfile()
     {
         String expectedText="Create Your Profile";
-        if(getCreateYourProfile().getText().equals(expectedText))
+        if(createYourProfile.getText().equals(expectedText))
         {
             return getCreateYourProfile().getText();
         }
@@ -234,30 +235,30 @@ public class ShopperCreateProfile extends TestBase {
     }
     public String firstNameError()
     {
-       return getFirstnameError().getText();
+       return firstnameError.getText();
     }
     public String lastNameError()
     {
-        return getLastNameError().getText();
+        return lastNameError.getText();
     }
     public String phoneNumberError()
     {
-        return getPhoneNumberError().getText();
+        return phoneNumberError.getText();
     }
     public String emailAddressError()
     {
-        return getEmailError().getText();
+        return emailError.getText();
     }
     public String passwordError()
     {
-        return getPassError().getText();
+        return passError.getText();
     }
     public String confirmPasswordError()
     {
-        return getConPassError().getText();
+        return conPassError.getText();
     }
     public LoginPage registerButton(){
-        getRegister().click();
+        register.click();
         return new LoginPage();
     }
 

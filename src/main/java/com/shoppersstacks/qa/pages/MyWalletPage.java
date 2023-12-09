@@ -46,22 +46,22 @@ public class MyWalletPage extends TestBase {
     }
 
     public void addMoney(){
-        getAddMoneyButton().click();
+        addMoneyButton.click();
     }
     public void useCouponCode(){
-        getUseCouponButton().click();
+        useCouponButton.click();
     }
     public void viewTransaction(){
-        getViewTransactionButton().click();
+        viewTransactionButton.click();
     }
     public void couponCode(String coupon){
-        getCouponCode().sendKeys(coupon);
+        couponCode.sendKeys(coupon);
     }
     public void verifyButton(){
-        getVerifyButton().click();
+        verifyButton.click();
     }
     public HomePage home(){
-        getHomeButton().click();
+        homeButton.click();
         return new HomePage();
     }
 }

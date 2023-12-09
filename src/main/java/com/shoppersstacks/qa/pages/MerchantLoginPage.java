@@ -37,18 +37,18 @@ public class MerchantLoginPage extends TestBase {
     }
     public void enterAdminEmailTextField(String Email)
     {
-        getEnterAdminEmailTextField().sendKeys(Email);
+        enterAdminEmailTextField.sendKeys(Email);
     }
     public void iconButton()
     {
-        getIconButton().click();
+        iconButton.click();
     }
     public void merchantSignUp()
     {
-        getMerchantSignUp().click();
+        merchantSignUp.click();
     }
     public void merchantEmail(String MerchantEmail)
     {
-        getEmail().sendKeys(MerchantEmail);
+        email.sendKeys(MerchantEmail);
     }
 }
