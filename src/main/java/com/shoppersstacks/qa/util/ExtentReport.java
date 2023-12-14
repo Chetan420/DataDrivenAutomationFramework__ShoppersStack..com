@@ -11,6 +11,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -20,6 +21,7 @@ public class ExtentReport extends TestListenerAdapter {
     public ExtentSparkReporter sparkReporter;
     public ExtentReports extentReports;
     public ExtentTest extentTest;
+
     public void onStart(ITestContext testContext) {
         String timeStamp=new SimpleDateFormat("yyyy.MM.dd.hh.mm.ss").format(new Date());
         String repName="TestReport-"+timeStamp+".html";
@@ -42,11 +44,11 @@ public class ExtentReport extends TestListenerAdapter {
         sparkReporter.config().setTheme(Theme.DARK);
     }
 
-
     public void onTestSuccess(ITestResult tr){
         extentTest=extentReports.createTest(tr.getName());
         extentTest.log(Status.PASS, MarkupHelper.createLabel(tr.getName(), ExtentColor.GREEN));
     }
+
     public void onTestFailure(ITestResult tr){
         extentTest=extentReports.createTest(tr.getName());
         extentTest.log(Status.FAIL, MarkupHelper.createLabel(tr.getName(), ExtentColor.RED));

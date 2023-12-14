@@ -13,6 +13,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.asserts.SoftAssert;
 
 import java.awt.*;
@@ -35,11 +37,11 @@ public class TestBase {
     public static TakesScreenshot ts;
     public static JavascriptExecutor js;
     public static Random random;
+
     public TestBase(){
         try{
             prop=new Properties();
-            FileInputStream input=new FileInputStream("C:\\Users\\cheta\\IdeaProjects\\ShoppersStack\\" +
-                    "src\\main\\java\\com\\shoppersstacks\\qa\\configure\\config.properties");
+            FileInputStream input=new FileInputStream("C:\\Users\\cheta\\IdeaProjects\\ShoppersStack\\src\\main\\java\\com\\shoppersstacks\\qa\\configure\\config.properties");
             prop.load(input);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -47,7 +49,6 @@ public class TestBase {
             throw new RuntimeException(e);
         }
     }
-
 
     public static void initialization() throws AWTException {
         String browserName=prop.getProperty("browser");
@@ -82,4 +83,5 @@ public class TestBase {
         efirire.register(eventListner);
         driver=efirire;
     }
+
 }

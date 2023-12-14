@@ -40,7 +40,7 @@ public class LoginPageTest extends TestBase {
     }
 
 
-    @Test(priority = 2,enabled = false)
+    @Test(priority = 2)
     public void verifyHideIcon() throws InterruptedException {
         Reporter.log("Verifying whether the HideIcon is working or not.",true);
         loginPage.loginButton();
@@ -111,6 +111,7 @@ public class LoginPageTest extends TestBase {
 
     @AfterMethod
     public void tearDown() {
-        driver.quit();
+        softAssert.assertAll();
+        driver.close();
     }
 }
