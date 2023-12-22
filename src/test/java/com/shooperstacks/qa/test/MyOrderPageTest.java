@@ -2,12 +2,15 @@ package com.shooperstacks.qa.test;
 
 import com.shoppersstacks.qa.base.TestBase;
 import com.shoppersstacks.qa.pages.*;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriverException;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
 import java.awt.*;
 
 @Listeners(com.shoppersstacks.qa.util.ExtentReport.class)
@@ -174,6 +177,8 @@ public class MyOrderPageTest extends TestBase {
 
     @AfterClass
     public void tearDown() {
+        softAssert.assertAll();
+        driver.manage().deleteAllCookies();
         driver.quit();
     }
 

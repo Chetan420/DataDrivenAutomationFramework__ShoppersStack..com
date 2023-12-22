@@ -112,6 +112,7 @@ public class LoginPageTest extends TestBase {
     @AfterMethod
     public void tearDown() {
         softAssert.assertAll();
+        driver.manage().deleteAllCookies();
         driver.close();
     }
 }

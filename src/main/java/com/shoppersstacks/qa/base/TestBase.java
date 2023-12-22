@@ -1,6 +1,6 @@
 package com.shoppersstacks.qa.base;
 
-import com.beust.jcommander.Parameter;
+
 import com.shoppersstacks.qa.util.TestUtil;
 import com.shoppersstacks.qa.util.WebEventListner;
 import org.openqa.selenium.JavascriptExecutor;
@@ -13,8 +13,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
 
 import java.awt.*;
@@ -23,7 +22,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
-import java.util.Random;
 
 public class TestBase {
     public static WebDriver driver;
@@ -36,8 +34,6 @@ public class TestBase {
     public static Robot robot;
     public static TakesScreenshot ts;
     public static JavascriptExecutor js;
-    public static Random random;
-
     public TestBase(){
         try{
             prop=new Properties();
@@ -52,18 +48,29 @@ public class TestBase {
 
     public static void initialization() throws AWTException {
         String browserName=prop.getProperty("browser");
-        if(browserName.equals("chrome")){
-            driver=new ChromeDriver();
+        switch (browserName){
+            case "Chrome":{
+                driver=new ChromeDriver();
+            }
+            break;
+            case "FireFox":{
+                driver=new FirefoxDriver();
+            }
+            break;
+            case "Edge":{
+                driver=new EdgeDriver();
+            }
+            break;
+            case "Safari":{
+                driver=new SafariDriver();
+            }
+            break;
+            default:
+            {
+                Reporter.log("Browser is name is matching");
+            }
         }
-        else if (browserName.equals("FireFox")) {
-            driver=new FirefoxDriver();
-        }
-        else if(browserName.equals("edge")){
-            driver=new EdgeDriver();
-        }
-        else if (browserName.equals("safari")) {
-            driver=new SafariDriver();
-        }
+
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICITLY_WAIT));
@@ -72,7 +79,6 @@ public class TestBase {
         Actions action=new Actions(driver);
         robot=new Robot();
         ts=(TakesScreenshot)driver;
-        random=new Random();
 
         js=(JavascriptExecutor)driver;
 

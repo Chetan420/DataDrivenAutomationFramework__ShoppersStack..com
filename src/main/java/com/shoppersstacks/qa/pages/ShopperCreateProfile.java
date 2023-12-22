@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Reporter;
+import org.testng.Reporter.*;
 
 public class ShopperCreateProfile extends TestBase {
     @FindBy(id = "signIn")

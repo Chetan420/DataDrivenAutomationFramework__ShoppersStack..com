@@ -27,7 +27,6 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.8.0</version>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -81,11 +80,12 @@
             <artifactId>poi</artifactId>
             <version>3.9</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.beust/jcommander -->
         <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.8.0</version>
-            <scope>compile</scope>
+            <groupId>com.beust</groupId>
+            <artifactId>jcommander</artifactId>
+            <version>1.82</version>
         </dependency>
 
     </dependencies>
