@@ -2,8 +2,6 @@ package com.shooperstacks.qa.test;
 
 import com.shoppersstacks.qa.base.TestBase;
 import com.shoppersstacks.qa.pages.*;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriverException;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
@@ -173,7 +171,6 @@ public class MyOrderPageTest extends TestBase {
         myOrdersPage.invoiceButton();
         homePage=myOrdersPage.homeButton();
     }
-
 
     @AfterClass
     public void tearDown() {
