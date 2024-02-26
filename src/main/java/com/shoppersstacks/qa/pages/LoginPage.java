@@ -115,7 +115,9 @@ public class LoginPage extends TestBase {
     public String msg(){
         return registrationMsg.getText();
     }
-
+    public String tile(){
+        return driver.getTitle();
+    }
     public String  loginButton() throws InterruptedException {
         wait.until(ExpectedConditions.elementToBeClickable(loginButton)).click();
         Thread.sleep(2000);

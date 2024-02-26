@@ -167,7 +167,7 @@ public class MyOrderPageTest extends TestBase {
         Reporter.log("Cancel the ordered Item",true);
         myOrdersPage.cancelOrderButton();
         myOrdersPage.yesButton();
-        Reporter.log("Generate the invoice report of ordered ite,",true);
+        Reporter.log("Generate the invoice report of ordered item,",true);
         myOrdersPage.invoiceButton();
         homePage=myOrdersPage.homeButton();
     }
