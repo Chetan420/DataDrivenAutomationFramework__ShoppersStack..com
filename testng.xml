@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<suite name="ShoppersStack">
     <listeners>
         <listener class-name="com.shoppersstacks.qa.util.ExtentReport"/>
     </listeners>
-    <test verbose="2" preserve-order="true"
-          name="ShoppersStack Report">
+    <test name="End to End Testing">
         <classes>
-            <class name="com.shooperstacks.qa.test.LoginPageTest"/>
-            <class name="com.shooperstacks.qa.test.MyOrderPageTest"/>
+            <class name="com.shooperstacks.qa.test.MyOrderPageTest">
+                <methods>
+                    <include name="loginAsShopper"/>
+                    <include name="addItemToCart"/>
+                    <include name="buyTheItemFromViewCart"/>
+                    <include name="addAddressInAddAddressPage"/>
+                    <include name="selectDeliveryAddress"/>
+                    <include name="selectPaymentOption"/>
+                    <include name="cancelTheOrderProduct"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

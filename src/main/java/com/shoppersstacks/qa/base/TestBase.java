@@ -1,6 +1,10 @@
 package com.shoppersstacks.qa.base;
 
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.shoppersstacks.qa.pages.LoginPage;
 import com.shoppersstacks.qa.util.TestUtil;
 import com.shoppersstacks.qa.util.WebEventListner;
 import org.openqa.selenium.JavascriptExecutor;
@@ -13,14 +17,19 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestContext;
 import org.testng.Reporter;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.asserts.SoftAssert;
 
 import java.awt.*;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Properties;
 
 public class TestBase {
@@ -34,6 +43,8 @@ public class TestBase {
     public static Robot robot;
     public static TakesScreenshot ts;
     public static JavascriptExecutor js;
+    public ExtentSparkReporter sparkReporter;
+    public ExtentReports extentReports;
     public TestBase(){
         try{
             prop=new Properties();
@@ -45,30 +56,41 @@ public class TestBase {
             throw new RuntimeException(e);
         }
     }
+    @BeforeSuite
+    public void onStart(ITestContext testContext) {
+        String timeStamp=new SimpleDateFormat("yyyy.MM.dd.hh.mm.ss").format(new Date());
+        String repName="TestReport-"+timeStamp+".html";
+
+        sparkReporter=new ExtentSparkReporter("./TestOutput/"+repName);
+        try {
+            sparkReporter.loadXMLConfig("C:\\Users\\cheta\\IdeaProjects\\ShoppersStack\\src\\extent-config.xml");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        extentReports=new ExtentReports();
+        extentReports.attachReporter(sparkReporter);
+        extentReports.setSystemInfo("Host Name","LocalHost");
+        extentReports.setSystemInfo("Environment","QA");
+        extentReports.setSystemInfo("user","Chethan");
+
+        sparkReporter.config().setDocumentTitle("ShoppersStack Test Project");
+        sparkReporter.config().setReportName("End To End Report");
+        sparkReporter.config().setTheme(Theme.DARK);
+    }
 
     public static void initialization() throws AWTException {
         String browserName=prop.getProperty("browser");
-        switch (browserName){
-            case "Chrome":{
-                driver=new ChromeDriver();
-            }
-            break;
-            case "FireFox":{
-                driver=new FirefoxDriver();
-            }
-            break;
-            case "Edge":{
-                driver=new EdgeDriver();
-            }
-            break;
-            case "Safari":{
-                driver=new SafariDriver();
-            }
-            break;
-            default:
-            {
-                Reporter.log("Browser is name is matching");
-            }
+        if (browserName.equalsIgnoreCase("Chrome")) {
+            driver = new ChromeDriver();
+        } else if (browserName.equalsIgnoreCase("Edge")) {
+            driver = new EdgeDriver();
+        } else if (browserName.equalsIgnoreCase("FireFox")) {
+            driver = new FirefoxDriver();
+        } else if (browserName.equalsIgnoreCase("Safari")) {
+            driver = new SafariDriver();
+        } else {
+            Reporter.log("Browser is not matching...");
         }
 
         driver.manage().window().maximize();
@@ -88,6 +110,11 @@ public class TestBase {
         eventListner = new WebEventListner();
         efirire.register(eventListner);
         driver=efirire;
+    }
+
+    @AfterSuite
+    public void onFinish(ITestContext testContext) {
+        extentReports.flush();
     }
 
 }
